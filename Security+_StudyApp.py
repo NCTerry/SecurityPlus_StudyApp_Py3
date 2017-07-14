@@ -84,6 +84,7 @@ Definition:   The Domain Name System (DNS) is a hierarchical decentralized namin
 
 '''
 from tkinter import *
+import random # For the random number on from the study list (StudyPage)
 import urllib
 import json
 # Terminal/CMD (we are on mac)
@@ -111,6 +112,7 @@ from matplotlib import pyplot as plt
 
 
 style.use("ggplot")
+XL_FONT  = ("Verdana", 30)  # Base font that we want to use and will call
 LARGE_FONT = ("Verdana", 18)  # Base font that we want to use and will call
 NORM_FONT = ("Verdana", 12)  # Base font that we want to use and will call
 SMALL_FONT = ("Verdana", 10)  # Base font that we want to use and will call
@@ -157,7 +159,7 @@ class SecurityPlus(tk.Tk):
         tk.Tk.__init__(self, *args, **kwargs)
 
         tk.Tk.title(self, "NCT's Security+ Study App")
-        tk.Tk.geometry(self, "600x1000")
+        tk.Tk.geometry(self, "700x1000")
         # Can't get the icon to show, now just a png icon
         # Resized to 12/16 pixels
         tk.Tk.iconbitmap(self, "icon.png")
@@ -233,7 +235,7 @@ class SecurityPlus(tk.Tk):
         # ===================FOR PAGE LOOP===============================
         # For loop that ranges in our page limits
         # Make sure to add any new page to our tuple for loop
-        for F in (StartPage, ConfirmAddPage, AddToFilePage, StudyPage, BTCePage):
+        for F in (StartPage, ConfirmAddPage, AddToFilePage, StudyPage):
             # Use F so that we can progress through our pages.
             frame = F(container, self)
             self.frames[F] = frame
@@ -303,6 +305,24 @@ class inputObject:
     def __repr__(self):
         return "\nInputObject(---------------------\n{}, \n{}, \n{}, \n{}, \n{}, \n{})".format(
             self.acronym, self.title, self.port, self.protocol, self.tcp_udp, self.definition)
+    # =======================
+    def __str__(self, whichOne):
+        if whichOne == "acronym":
+            return '{}'.format(self.acronym)
+            # Prints out:       Acronym:      FTP
+        elif whichOne == "title":
+            return '{}'.format(self.title)
+        elif whichOne == "port":
+            return '{}'.format(self.port)
+        elif whichOne == "protocol":
+            return '{}'.format(self.protocol)
+        elif whichOne == "tcp_udp":
+            return '{}'.format(self.tcp_udp)
+        elif whichOne == "definition":
+            return '{}'.format(self.definition)
+        # ======================
+    def __len__(self):
+        return self.numberOFStudyObjects
         # =======================
         # =======================
         # =======================
@@ -362,67 +382,6 @@ def popupmsg(msg):
 # ==================================================
 # ==================================================
 # ==================================================
-def animate(i):
-    # ==================================================
-    # This is the new animate function which pulls live trading data from btc-e.com for our plot
-    # This is the direct link, but we want to add a parameter, how many trades.
-    #       The site limit is 2000 for us to capture
-    #       To add a parameter use:     ' ?parameterName=parameterValue '
-    # datalink1 = "https://btc-e.com/api/3/trades/btc_usd"
-
-    # animate function with  'i' for interval
-    # Note: The request is giving us a pseudo error. It works, but pycharm is overreacting.
-
-    dataLink = 'https://btc-e.com/api/3/trades/btc_usd?limit=2000'
-    data = urllib.request.urlopen(dataLink)
-    data = data.readline().decode("utf-8")
-    data = json.loads(data)
-
-    data = data["btc_usd"]  # Refers to the whole data set read in (seen below)
-    # Now use pandas to organize the 2000 rows of data we are bringing in.
-    data = pd.DataFrame(data)
-
-    # Separating our json data being pulled in (seen below).
-    buys1 = data[(data["type"] == "bid")]
-    # Now need to convert the unix timestamp. matplotlib does not recognize this.
-    buys1["datestamp"] = np.array(buys1["timestamp"]).astype("datetime64[s]")
-    buyDates1 = (buys1["datestamp"]).tolist()
-
-    # Separating our json data being pulled in (seen below).
-    sells1 = data[(data["type"] == "ask")]
-    # Now need to convert the unix timestamp. matplotlib does not recognize this.
-    sells1["datestamp"] = np.array(sells1["timestamp"]).astype("datetime64[s]")
-    sellDates1 = (sells1["datestamp"]).tolist()
-
-    a.clear()
-    # Plot the data points, and turn them into colored-labeled lines.
-    a.plot_date(buyDates1, buys1["price"], "g", label="buys")
-    a.plot_date(sellDates1, sells1["price"], "#00A3E0", label="sells")
-    # Legend lets us specifically place our line labels in the top left
-    # Default they are put on the graph and will be covered up if the lines go over them.
-    a.legend(bbox_to_anchor=(0,1.02, 1, .102), loc=3, ncol=2, borderaxespad=0)
-    # Plot title with a live update of the last price from the most recent data set.
-    title = "BTC-e BTCUSD Prices\nLast Price: " + str(data["price"][1999])
-    a.set_title(title)
-    # -------------------------------------------------------
-    # ==================================================
-    # ==================================================
-    '''
-    -------------------------------------------------------
-        THESE ARE REAL DAILY BIDS 12:16PM 7/7/2017
-        THIS IS THE JSON info that we will be pulling from.
-        It has a unix timestamp
-    -------------------------------------------------------
-        {"btc_usd":[{"type":"ask","price":2474.869,"amount":0.15496925,"tid":110941553,"timestamp":1499451300},
-        {"type":"ask","price":2475.259,"amount":0.09,"tid":110941552,"timestamp":1499451300},
-        {"type":"ask","price":2475.261,"amount":0.00527802,"tid":110941551,"timestamp":1499451300},
-        {"type":"ask","price":2475.219,"amount":0.38974944,"tid":110941540,"timestamp":1499451285},
-        {"type":"bid","price":2478.55,"amount":0.01653934,"tid":110941537,"timestamp":1499451283},
-    -------------------------------------------------------
-    '''
-# ==================================================
-# ==================================================
-# ==================================================
 # Use the hashtag as the marker of a new input.
 def readTxtFile(): #animate function with  'i' for interval
 #       This is called on the   AddToFilePage
@@ -460,7 +419,7 @@ def readTxtFile(): #animate function with  'i' for interval
     print("\n Check the y range")
     # Clear the global list, as we will be appending to it the entire txt file.
     global_fileData[:] = []
-    for y in range(0, len(dataList1)):
+    for y in range(0, len(dataList1)-1):
         print(dataList1[y])
         if dataList1[y] == "###":
             studyObject = inputObject(dataList1[y+1], dataList1[y+2], dataList1[y+3], dataList1[y+4], dataList1[y+5], dataList1[y+6])
@@ -480,7 +439,8 @@ def readTxtFile(): #animate function with  'i' for interval
     # =======================
     # How we are printing the object list.
     # Object format is created and returned based on the ___repr___ format from the inputObject class.
-    print("\nTrueList = ", trueList)
+    print("\n TrueList = ", trueList)
+    print("\n Truelist __str__", global_fileData[len(global_fileData) -1].__str__("acronym"))
 
     '''
         TrueList =  [
@@ -539,12 +499,12 @@ def writeToTxtFile(acronym, title, port, protocol, TCP_UDP, definition): #animat
 
     # Append the user input to the file as expected
     writeData1.write('###\n')
-    writeData1.write("Acronym:      " + acronym + '\n')
-    writeData1.write("Title:        " + title + '\n')
-    writeData1.write("Port:         " + port + "\n")
-    writeData1.write("Protocol:     " + protocol + "\n")
-    writeData1.write("TCP/UDP:      " + TCP_UDP + "\n")
-    writeData1.write("Definition:   " + definition + '\n')
+    writeData1.write("Acronym:     " + acronym + '\n')
+    writeData1.write("Title:           " + title + '\n')
+    writeData1.write("Port:           " + port + "\n")
+    writeData1.write("Protocol:      " + protocol + "\n")
+    writeData1.write("TCP/UDP:     " + TCP_UDP + "\n")
+    writeData1.write("Definition:           " + definition + '\n')
     writeData1.close()
 
 
@@ -587,7 +547,7 @@ def writeToTxtFile(acronym, title, port, protocol, TCP_UDP, definition): #animat
 class StartPage(ttk.Frame):
     def __init__(self, parent, controller):
         ttk.Frame.__init__(self, parent)
-        label = ttk.Label(self, text="Start Page", font=LARGE_FONT)
+        label = ttk.Label(self, text="Start Page", font=XL_FONT)
         label.pack(padx=10, pady=10)
 
         # ----------------------------
@@ -614,7 +574,7 @@ class StartPage(ttk.Frame):
 class ConfirmAddPage(ttk.Frame):
     def __init__(self, parent, controller):
         ttk.Frame.__init__(self, parent)
-        label = ttk.Label(self, text="The Study File", font=LARGE_FONT)
+        label = ttk.Label(self, text="The Study File", font=XL_FONT)
         label.pack(padx=10, pady=10)
 
         # ----------------------------
@@ -660,7 +620,7 @@ class AddToFilePage(ttk.Frame):
     def __init__(self, parent, controller):
         ttk.Frame.__init__(self, parent)
 
-        label = ttk.Label(self, text="Add to Study File", font=LARGE_FONT)
+        label = ttk.Label(self, text="Add to Study File", font=XL_FONT)
         # 1st row, 2nd column, pushto right 40%
         label.grid(row=0, column=1, padx=40)
         # ------------------------
@@ -766,82 +726,197 @@ class AddToFilePage(ttk.Frame):
 class StudyPage(ttk.Frame):
     def __init__(self, parent, controller):
         ttk.Frame.__init__(self, parent)
-        label = ttk.Label(self, text="Study Page", font=LARGE_FONT)
-        label.pack(padx=10, pady=10)
+        label = ttk.Label(self, text="Study Page", font=XL_FONT)
+        label.grid(row=0, column=2, padx=10, pady=10, sticky="W")
 
+
+        def clear_Labels():
+            # We need to clear the current labels
+            acronymLabel_textVar.set(":")
+            titleLabel_textVar.set(":")
+            portLabel_textVar.set(":")
+            protocolLabel_textVar.set(":")
+            tcp_udp_Label_textVar.set(":")
+            definitionLabel_textVar.set(":")
+        # ==================================================
+        # The value user is seeking in the StudyObject list
+        # This is for the single increment for the next object
+        # Can't be more than the len - 1
+        self.studyNumber = 0
+        def next_StudyObject():
+
+            # We need to clear the current labels
+            clear_Labels()
+            print(self.studyNumber)
+            if self.studyNumber < len(global_fileData)-1:
+                self.studyNumber += 1
+                print(self.studyNumber)
+            else:
+                print("\n There are no more objects")
+                self.studyNumber = 0
+
+        # ==================================================
+        # Allow the user to get a random study object from the list.
+        def random_StudyObject():
+
+            # We need to clear the current labels
+            clear_Labels()
+            print(self.studyNumber)
+            self.studyNumber = random.randint(0, len(global_fileData)-1)
+            print(self.studyNumber)
+
+        # ==================================================
         # Auto get the object list of our study txt file.
-        rtnList = []
-        def printrtn():
-            rtnList = readTxtFile()
+        def printrtn(): # ==================================================
+
+            readTxtFile()
             print("\nGlobal File Data = ")
             print(global_fileData)
-            print("\nGlobal File Data[3] =", global_fileData[3]) # works
-            '''
-            Prints out the 4th study object in the global list
-            '''
-            #print("\nrtnList from StudyPage: ", rtnList)
+            # ---------
+            # Currently we are just asking to get the last on in the list.
+            # The __repr__ prints the full value of the studyObject.
+            # We created the __repr__ in the class inputObject
+            print("\nGlobal File Data[Lastone] repr data=",
+                  global_fileData[self.studyNumber].__repr__()) # works
+            # ---------
+            # __str__ currently prints:      Acronym:      FTP
+            #   We created the __str__ in the class inputObject
+            #   __str__()   depends on the sent piece: (acronym, title, port, protocol, tcp_udp, definition)
+            #   We have it printing from the last one in the list currently
+            print("\nGlobal File Data[Lastone] str data =",
+                  global_fileData[self.studyNumber].__str__("acronym")) # works
+            # ---------
 
+        # ==================================================
         # ----------------------------
-        # Will print out the file to the page
-        printOutFile_StudyPageButton = ttk.Button(self, text="Print File to Page",
-                                                 command=lambda: controller.show_frame(ConfirmAddPage))
-        printOutFile_StudyPageButton.pack()
+        # ----------------------------
+        # ----------------------------
+        # User clicks a button with what they want from of the 6 object values
+        # The button calls this method while sending the stated value that they want.
+        def state_Acronym():
+            readTxtFile()
 
+            print(global_fileData[self.studyNumber].__str__("acronym"))
+            acronymLabel_textVar.set(global_fileData[self.studyNumber].__str__("acronym"))
+        # ----------------------------
+        def state_Title():
+            readTxtFile()
+
+            print(global_fileData[self.studyNumber].__str__("title"))
+            titleLabel_textVar.set(global_fileData[self.studyNumber].__str__("title"))
+        # ----------------------------
+        def state_Port():
+            readTxtFile()
+
+            print(global_fileData[self.studyNumber].__str__("port"))
+            portLabel_textVar.set(global_fileData[self.studyNumber].__str__("port"))
+        # ----------------------------
+        def state_Protocol():
+            readTxtFile()
+
+            print(global_fileData[self.studyNumber].__str__("protocol"))
+            protocolLabel_textVar.set(global_fileData[self.studyNumber].__str__("protocol"))
+        # ----------------------------
+        def state_Tcp_Udp():
+            readTxtFile()
+
+            print(global_fileData[self.studyNumber].__str__("tcp_udp"))
+            tcp_udp_Label_textVar.set(global_fileData[self.studyNumber].__str__("tcp_udp"))
+        # ----------------------------
+        def state_Definition():
+            readTxtFile()
+
+            print(global_fileData[self.studyNumber].__str__("definition"))
+            definitionLabel_textVar.set(global_fileData[self.studyNumber].__str__("definition"))
+            # ==================================================
+        # ----------------------------
+        # The methods(above), buttons and the labels (below) for the 6 attributes on StudyPage
+        # ----------------------------
+        # ----------------------------
+        # --- Acronym button
+        stateAcronymButton = ttk.Button(self, text="Acronym", command=state_Acronym)
+        stateAcronymButton.grid(row=2, column=2, sticky="W")
+        # --- Acronym label
+        acronymLabel_textVar = StringVar()
+        acronymLabel_textVar.set(':')
+        acronymLabel = ttk.Label(self, textvariable=acronymLabel_textVar, font=LARGE_FONT)
+        acronymLabel.grid(row=3, column=2, sticky="W", pady=(0,20))
+        # ----------------------------
+        # ----------------------------
+        # --- Title button
+        stateTitleButton = ttk.Button(self, text="Title", command=state_Title)
+        stateTitleButton.grid(row=4, column=2, sticky="W")
+        # --- Title label
+        titleLabel_textVar = StringVar()
+        titleLabel_textVar.set(':')
+        titleLabel = ttk.Label(self, textvariable=titleLabel_textVar, font=LARGE_FONT)
+        titleLabel.grid(row=5, column=2, sticky="W", pady=(0,20))
+        # ----------------------------
+        # ----------------------------
+        # --- Port button
+        statePortButton = ttk.Button(self, text="Port", command=state_Port)
+        statePortButton.grid(row=6, column=2, sticky="W")
+        # --- Port label
+        portLabel_textVar = StringVar()
+        portLabel_textVar.set(':')
+        portLabel = ttk.Label(self, textvariable=portLabel_textVar, font=LARGE_FONT)
+        portLabel.grid(row=7, column=2, sticky="W", pady=(0,20))
+        # ----------------------------
+        # ----------------------------
+        # --- Protocol button
+        stateProtocolButton = ttk.Button(self, text="Protocol", command=state_Protocol)
+        stateProtocolButton.grid(row=8, column=2, sticky="W")
+        # --- Protocol label
+        protocolLabel_textVar = StringVar()
+        protocolLabel_textVar.set(':')
+        protocolLabel = ttk.Label(self, textvariable=protocolLabel_textVar, font=LARGE_FONT)
+        protocolLabel.grid(row=9, column=2, sticky="W", pady=(0,20))
+        # ----------------------------
+        # ----------------------------
+        # --- TCP_UDP button
+        state_tcp_udp_Button = ttk.Button(self, text="TCP/UDP", command=state_Tcp_Udp)
+        state_tcp_udp_Button.grid(row=10, column=2, sticky="W")
+        # --- TCP_UDP label
+        tcp_udp_Label_textVar = StringVar()
+        tcp_udp_Label_textVar.set(':')
+        tcp_udp_Label = ttk.Label(self, textvariable=tcp_udp_Label_textVar, font=LARGE_FONT)
+        tcp_udp_Label.grid(row=11, column=2, sticky="W", pady=(0,20))
+        # ----------------------------
+        # ----------------------------
+        # --- Definition button
+        stateDefinitionButton = ttk.Button(self, text="Definition", command=state_Definition)
+        stateDefinitionButton.grid(row=12, column=2, sticky="W")
+        # --- Definition label
+        definitionLabel_textVar = StringVar()
+        definitionLabel_textVar.set(':')
+        # Note: wraplegth keeps the definition in the current window frame.
+        # I don't know if we need this on the other 5 yet
+        definitionLabel = ttk.Label(self, textvariable=definitionLabel_textVar,
+                                    font=NORM_FONT, wraplength=500)
+        definitionLabel.grid(row=13, column=2, sticky="W", pady=(0,30))
+        # ----------------------------
+        # ----------------------------
+        # ----------------------------
+        # ==================================================
+        # ----------------------------
+        # Button to increase the studyNumber + 1 to call for the next object
+        increaseByOneButton = ttk.Button(self, text="Next", command=next_StudyObject)
+        increaseByOneButton.grid(row=14, column=1, sticky="WE", padx=(20,0))
+        # ----------------------------
+        # Button to get a random studyNumber for the next object
+        randomNumberButton = ttk.Button(self, text="Random", command=random_StudyObject)
+        randomNumberButton.grid(row=15, column=1, sticky="WE", padx=(20,0))
         # ----------------------------
         # Button to go back home
-        returHomeButtonf = ttk.Button(self, text="Return to Home Page",
+        returHomeButtonf = ttk.Button(self, text="Return Home",
                              command=lambda: controller.show_frame(StartPage))
-        returHomeButtonf.pack()
+        returHomeButtonf.grid(row=16, column=1, sticky="WE", padx=(20,0))
 
-        # ----------------------------
-        fileButton = ttk.Button(self, text="Print File", command=printrtn)
-        fileButton.pack(padx=10, pady=10)
 
-        # ----------------------------
-        fileLabel = ttk.Label(self, text="List below", font=SMALL_FONT)
-        fileLabel.pack(padx=10, pady=10)
 
-        # ----------------------------
-        fileLabel = ttk.Label(self, text="List below", font=SMALL_FONT)
-        fileLabel.pack(padx=10, pady=10)
+
 # ==================================================
 # ==================================================
-# ==================================================
-# ==================================================
-class BTCePage(ttk.Frame):
-    def __init__(self, parent, controller):
-        ttk.Frame.__init__(self, parent)
-
-        # ----------------------------
-        label = ttk.Label(self, text="BitCoin Trading Page"
-                                     "\nThis is on live update based on site data.", font=LARGE_FONT)
-        label.pack(padx=10, pady=10)
-
-        # ----------------------------
-        # ttk will give us a good looking button
-        pageTwo_homeButton = ttk.Button(self, text="Back to Home",
-                                        command=lambda: controller.show_frame(StartPage))
-        pageTwo_homeButton.pack()
-
-        # ----------------------------
-        # ----------------------------
-        # ----------------------------
-        # This set is needed for our plot.
-        # Place this on the page you want the user to view the live plot
-        # This is what is communicating with the main object call and the animate method
-        canvas1 = FigureCanvasTkAgg(f, self)
-        canvas1.show()
-        canvas1.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=True)
-
-        # We have a graph with the above but we want a Nav Bar
-        # Navigation bar
-        toolbar1 = NavigationToolbar2TkAgg(canvas1, self)
-        toolbar1.update()
-        canvas1._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
-        # Note we just added the standard tool bar to the graph but I
-        #   i could not see it at first. I had to increase my y-height on page
-
-        # ----------------------------
 # ==================================================
 # END PAGES PAGES PAGES PAGES PAGES PAGES PAGES
 # END PAGES PAGES PAGES PAGES PAGES PAGES PAGES
@@ -859,11 +934,6 @@ class BTCePage(ttk.Frame):
 #   MAIN    MAIN    MAIN    MAIN    MAIN    MAIN
 # ==================================================
 app = SecurityPlus()
-
-# using our f-object from the top, animate-function, and 5000 milliseconds
-# This means we will update our data every 5 seconds.
-# This is what plotted to the graph page in file 6
-ani1 = animation.FuncAnimation(f, animate, interval=5000)
 
 app.mainloop()
 # ==================================================
