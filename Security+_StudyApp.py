@@ -17,106 +17,33 @@ Explanation to turn this .py file into a .exe file.
 # ==================================================
 # ==================================================
 # ==================================================
-'''
-# ==================================================
-We are creating an application to help study for the Security+ Exam
-
-1) Created a standard start page with:
-    a) direct button to the add info to a study file.
-        Since we will be changing a file, you must click "agree" on a safety page
-    b) Close the program button
-    c) direct button to go to the study page
-
-# ==================================================
-2) Page to agree/disagree to alter the file that has the study info
-    a) Agree = takes you to the change the file page
-    b) Disagree automatically takes you back to the Start Page
-
-# ==================================================
-3) File organization. We are keeping our pages next to each other in program code.
-    Methods, even if for specific pages will be together as well.
-        1) Imports and globals
-        2) Tkinter overall file page format
-        3) Used Class objects
-        4) Methods
-        4) Pages
-
-# ==================================================
-4) We created a class for study objects
-    When a user adds a study piece on the add page, it is added to the file line by line
-    ...but when read off the file, the read method pulls it off as a class object.
-        InputObject(---------------------
-            Acronym:      DNS,
-            Title:        Domain Name System,
-            Port:         443,
-            Protocol:     N/A
-            TCP/UDP:      TCP
-            Definition:   The internets system of converting alphabetic names into numeric IP addressses),
-
-# ==================================================
-5) We have a global list, we can call this list at any time from anywhere
-        The global list is made from input class objects, currently has 6parts of user input
-        We have to run the read function to update the list as a whole
-        The end of the write function on the   addToStudyFilePage  appends the user input to the page on the spot
-
-# ==================================================
-6) File written per user input as:
-###
-Acronym:      FTP
-Title:        File Transfer Protocol
-Port:         21
-Protocol:     N/A
-TCP/UDP:      TCP
-Definition:   The File Transfer Protocol (FTP) is a standard network protocol used for the transfer of computer files between a client and server on a computer network.FTP is built on a client-server model architecture and uses separate control and data connections between the client and the server.[1] FTP users may authenticate themselves with a clear-text sign-in protocol, normally in the form of a username and password, but can connect anonymously if the server is configured to allow it. For secure transmission that protects the username and password, and encrypts the content, FTP is often secured with SSL/TLS (FTPS). SSH File Transfer Protocol (SFTP) is sometimes also used instead; it is technologically different.The first FTP client applications were command-line programs developed before operating systems had graphical user interfaces, and are still shipped with most Windows, Unix, and Linux operating systems.[2][3] Many FTP clients and automation utilities have since been developed for desktops, servers, mobile devices, and hardware, and FTP has been incorporated into productivity applications, such as web page editors.
-
-# ==================================================
-7) File read from and turned into individual study objects, and each object is inserted into global list.
-    This will be so that a user can get a single piece from an object and then call the remaining pieces
-    User is shown:      FTP
-    User can study and guess/know that that FTP stands for File Transfer Protocol
-    User can click on: Show Title to check
-    Program will display the title: File Transfer Protocol to confirm the user.
-Global File Data =
-[
-InputObject(---------------------
-Acronym:      FTP,
-Title:        File Transfer Protocol,
-Port:         21,
-Protocol:     N/A,
-TCP/UDP:      TCP,
-Definition:   The File Transfer Protocol (FTP) is a standard network protocol used for the transfer of computer files between a client and server on a computer network.FTP is built on a client-server model architecture and uses separate control and data connections between the client and the server.[1] FTP users may authenticate themselves with a clear-text sign-in protocol, normally in the form of a username and password, but can connect anonymously if the server is configured to allow it. For secure transmission that protects the username and password, and encrypts the content, FTP is often secured with SSL/TLS (FTPS). SSH File Transfer Protocol (SFTP) is sometimes also used instead; it is technologically different.The first FTP client applications were command-line programs developed before operating systems had graphical user interfaces, and are still shipped with most Windows, Unix, and Linux operating systems.[2][3] Many FTP clients and automation utilities have since been developed for desktops, servers, mobile devices, and hardware, and FTP has been incorporated into productivity applications, such as web page editors.),
-InputObject(---------------------
-Acronym:      DNS,
-Title:        Domain Name System,
-Port:         N/A,
-Protocol:     N/A,
-TCP/UDP:      N/A,
-Definition:   The Domain Name System (DNS) is a hierarchical decentralized naming system for computers, services, or other resources connected to the Internet or a private network. It associates various information with domain names assigned to each of the participating entities. ................cont.....
-# ==================================================
-
-'''
-# ==================================================
 # ==================================================
 # ==================================================
 # ==================================================
 # ==================================================
 # ==================================================
 # Imports Imports Imports Imports Imports Imports
+# Program made with python 3.5.2
+#       Pycharm Community Edition
+# Runs with idle:
+#       Run Module
+
 from tkinter import *
 import random # For the random number on from the study list (StudyPage)
 import urllib
 import json
 # Terminal/CMD (we are on mac)
-#   pip install pandas
-#   pip install numpy
-import pandas as pd
-import numpy as np
+#   pip3 install pandas
+#   pip3 install numpy
+# Need for the graph if we use it
+#import pandas as pd
+#import numpy as np
 
 # ==================================================
 import tkinter as tk
 from tkinter import ttk
 '''
-Terminal/CMD     pip install matplotlib
+Terminal/CMD     pip3 install matplotlib
 '''
 import matplotlib
 # This (below) lets us "change the back ground"
@@ -127,6 +54,7 @@ import matplotlib.animation as animation
 from matplotlib import style
 
 from matplotlib import pyplot as plt
+
 # ==================================================
 # ==================================================
 # ==================================================
@@ -439,37 +367,76 @@ def readTxtFile(): #animate function with  'i' for interval
     We are working with the same global list, and the same file. This method is called numerous times to make
         sure that user has the most updated list on all pages.
     '''
-    dataList1 = [line.rstrip('\n') for line in open('SecurityPlus_StudyFile.txt')]
 
+    #dataList1 = [line.rstrip('\n') for line in open('SecurityPlus_StudyFile.txt')]
+    dataList1 = [line.rstrip('\n') for line in open("/Users/Tracksta6/Dropbox/Computer Science/tkinter/Py3_SecurityPlus_StudyApp/SecurityPlus_StudyFile.txt")]
     # =======================
     print("\nThat was the datalist as a variable, now the for loop: ")
     # Simple print out from the file.
-    for x in dataList1:
-        print(x)
-        if x == "###":
-            print("----------------")
+    for x in dataList1: pass
+        #print(x)
+        #if x == "###":
+        #    print("----------------")
         # =======================
-        '''
-            ###
-            ----------------
-            Acronym:     NCT
-            Title:           Nate
-            Port:           Charles
-            Protocol:      Terry
-            TCP/UDP:     UDP
-            Definition:           I am a cyber security guy
-            ###
-        '''
+    '''
+        ###
+        ----------------
+        Acronym:     NCT
+        Title:           Nate
+        Port:           Charles
+        Protocol:      Terry
+        TCP/UDP:     UDP
+        Definition:           I am a cyber security guy
+        ###
+    '''
     # =======================
     print("\n Check the y range (readTxtFile)")
     # Clear the global list, as we will be adding the entire txt file including the new piece.
     global_fileData[:] = []
     for y in range(0, len(dataList1)-1):
-        # if line == ###  then we know the next 6 lines will be our attributes
-        if dataList1[y] == "###":
-            # Create an object and add it to the txt file.
-            studyObject = inputObject(dataList1[y+1], dataList1[y+2], dataList1[y+3], dataList1[y+4], dataList1[y+5], dataList1[y+6])
+        # y=0 is always the first acronym
+        if y == 0:
+            print("we are at zero")
+            acronym = dataList1[y]
+            title = dataList1[y + 1]
+            port = dataList1[y + 2]
+            protocol = dataList1[y + 3]
+            tcp_udp = dataList1[y + 4]
+            definition = dataList1[y + 5]
+            # Remember the very first object does not start with ###
+            # We may have lists on the definition, need to account for more than 6 lines
+            XII = 6
+            if y != (len(dataList1)-7) and dataList1[y+XII] != "###":
+                while dataList1[y+XII] != "###":
+                    if dataList1[y+XII] == "\n":
+                        XII += 1
+                    else:
+                        definition += "\n" + dataList1[y+XII]
+                        XII += 1
 
+            studyObject = inputObject(acronym, title, port, protocol, tcp_udp, definition)
+            global_fileData.append(studyObject)
+
+        # after y=0 if line == ###  then we know the next 6 lines will be our attributes
+        if dataList1[y] == "###":
+            acronym = dataList1[y+1]
+            title = dataList1[y+2]
+            port = dataList1[y+3]
+            protocol = dataList1[y+4]
+            tcp_udp = dataList1[y+5]
+            definition = dataList1[y+6]
+            # We may have lists on the definition, need to account for more than 6 lines
+            XII = 7
+            if y != (len(dataList1)-7) and dataList1[y+XII] != "###":
+                while dataList1[y+XII] != "###":
+                    if dataList1[y+XII] == "\n":
+                        XII += 1
+                    else:
+                        definition += "\n" + dataList1[y+XII]
+                        XII += 1
+
+            # Create an object and add it to the txt file.
+            studyObject = inputObject(acronym, title, port, protocol, tcp_udp, definition)
             global_fileData.append(studyObject)
 # ==================================================
 # ==================================================
@@ -480,7 +447,8 @@ def appendToTxtFile(acronym, title, port, protocol, TCP_UDP, definition): #anima
     This is called on the   AddToFilePage
         Called for user to add a full object to the file.
     '''
-    writeData1 = open("SecurityPlus_StudyFile.txt", "a")
+    #writeData1 = open("SecurityPlus_StudyFile.txt", "a")
+    writeData1 = open("/Users/Tracksta6/Dropbox/Computer Science/tkinter/Py3_SecurityPlus_StudyApp/SecurityPlus_StudyFile.txt", "a")
 
     # Print's are just for programmer show
     print("acronym    = " + acronym)
@@ -492,44 +460,48 @@ def appendToTxtFile(acronym, title, port, protocol, TCP_UDP, definition): #anima
 
     # If the user does not input anything, we will write N/A
     if acronym == "":
-        acronym = "N/A"
+        acronym = "-"
     # Remove /n from a single string. Keep as one piece. Only need for Definition, but be safe
     acronym = acronym.replace("\n", "")
     # -------------------
     if title == "":
-        title = "N/A"
+        title = "-"
     # Remove /n from a single string. Keep as one piece. Only need for Definition, but be safe
     title = title.replace("\n", "")
     # -------------------
     if port == "":
-        port = "N/A"
+        port = "-"
     # Remove /n from a single string. Keep as one piece. Only need for Definition, but be safe
     port = port.replace("\n", "")
     # -------------------
     if protocol == "":
-        protocol = "N/A"
+        protocol = "-"
     # Remove /n from a single string. Keep as one piece. Only need for Definition, but be safe
     protocol = protocol.replace("\n", "")
     # -------------------
     if TCP_UDP == "":
-        TCP_UDP = "N/A"
+        TCP_UDP = "-"
     # Remove /n from a single string. Keep as one piece. Only need for Definition, but be safe
     TCP_UDP = TCP_UDP.replace("\n", "")
     # -------------------
     if definition == "":
-        definition = "N/A"
-    # Remove /n from a single string. Keep as one piece.
-    definition = definition.replace("\n", "")
+        definition = "-"
+    # Double stars are turned into a new line
+    #       Account for spaces
+    definition = definition.replace(" ** ", "\n---")
+    definition = definition.replace("** ", "\n---")
+    definition = definition.replace(" **", "\n---")
+    definition = definition.replace("**", "\n---")
 
 
     # Append the user input to the file as expected
-    writeData1.write('###\n')
     writeData1.write("Acronym:     " + acronym + '\n')
     writeData1.write("Title:           " + title + '\n')
     writeData1.write("Port:           " + port + "\n")
     writeData1.write("Protocol:      " + protocol + "\n")
     writeData1.write("TCP/UDP:     " + TCP_UDP + "\n")
     writeData1.write("Definition:           " + definition + '\n')
+    writeData1.write('###\n')
     writeData1.close()
 
 
@@ -552,19 +524,37 @@ def changeTxtFile():
             Full rewrite is not efficient, but helps to remain consistant on a small scale like this.
 
     '''
-    writeData1 = open("SecurityPlus_StudyFile.txt", "w")
-
+    #writeData1 = open("SecurityPlus_StudyFile.txt", "w")
+    writeData1 = open("/Users/Tracksta6/Dropbox/Computer Science/tkinter/Py3_SecurityPlus_StudyApp/SecurityPlus_StudyFile.txt", "w")
     for x in global_fileData:
-
+        # Double stars are turned into a new line
+        #       Account for spaces
+        x.definition = x.definition.replace(" ** ", "\n---")
+        x.definition = x.definition.replace("** ", "\n---")
+        x.definition = x.definition.replace(" **", "\n---")
+        x.definition = x.definition.replace("**", "\n---")
         # Append the user input to the file as expected
-        writeData1.write('###\n')
         writeData1.write(x.acronym + '\n')
         writeData1.write(x.title + '\n')
         writeData1.write(x.port + "\n")
         writeData1.write(x.protocol + "\n")
         writeData1.write(x.tcp_udp + "\n")
         writeData1.write(x.definition + '\n')
+        writeData1.write('###\n')
+
     writeData1.close()
+# ==================================================
+# ==================================================
+# ==================================================
+# ==================================================
+def deleteObject(deletePosition):
+    '''
+    Call this method.
+        Send a int with the method call.
+        That int will be the position that wants to be deleted.
+    '''
+    print(global_fileData[deletePosition])
+
 # ==================================================
 # ==================================================
 # ==================================================
@@ -600,7 +590,7 @@ class StartPage(ttk.Frame):
                 User can adjust a specific object's attributes
             4) Key Logger page
                 Simple display of user pressing buttons and being 'recorded'
-                    Note: Space and right arrow are used in StudyPage
+                    Note: Down and right arrow are used in StudyPage
                     They seem to be permanently tied. Can't be used here?
             5) Quit Program
 
@@ -727,15 +717,14 @@ class AddToFilePage(ttk.Frame):
         # 1st row, 2nd column, pushto right 40%
         label.grid(row=0, column=1, padx=40)
         # ------------------------
-        warninglabel = ttk.Label(self, text="Note: If you leave a spot blank, we will auto-include 'N/A'",
+        warninglabel = ttk.Label(self, text="There are  characters that may not be accepted:"
+                                            "\nMicrosoft will AutoFill dashes, arrows, etc. They are not accepted here."
+        "\nEven quotation marks can be copied/pasted that don't work"
+                                        "\nThe definition can be long, but keep it simple."
+                                        "\nPress  'Write Txt File'  to save. ",
                                  font=NORM_FONT)
         warninglabel.grid(row=1, column=1)
         # ------------------------
-        warninglabel2 = ttk.Label(self, text="There are special characters that aren't accepted."
-                                             "\nThe definition can be long, but keep it simple. ",
-                                 font=NORM_FONT)
-        warninglabel2.grid(row=2, column=1)
-
         # ------------------------
         spacerLabel = ttk.Label(self, text="", font=LARGE_FONT)
         # 1st row, 2nd column, pushto right 40%
@@ -791,42 +780,55 @@ class AddToFilePage(ttk.Frame):
         def_Label = ttk.Label(self, text="Add Definition: ", font=LARGE_FONT)
         def_Label.grid(row=14, column=0, sticky="W", padx=20)
         # -----
-        def_input = ttk.Entry(self, width=40)
+        def_input = ttk.Entry(self, width=70, )
         def_input.grid(row=14, column=1, sticky="W")
         # -----
-        acro_Example = ttk.Label(self, text="Ex: The Internet's system for converting"
-                                            "\nalphabetic names into numeric IP addresses."
-                                            "\nFor example, when a Web address (URL) is "
-                                            "\ntyped into a browser, DNS servers return the "
-                                            "\nIP address of the Web server associated with "
-                                            "\nthat name. In this made-up example, the DNS "
-                                            "\nconverts the URL www.company.com into the IP "
-                                            "\naddress 204.0.8.51. Without DNS, you would have "
-                                            "\nto type the series of four numbers and dots into "
-                                            "\nyour browser to retrieve the website, which you "
-                                            "\nactually can do. ", font=NORM_FONT)
-        acro_Example.grid(row=15, column=1, pady=(0,10))
+        def_Example = ttk.Label(self, text="Ex: The Internet's system for converting"
+                                            "alphabetic names into numeric IP addresses."
+                                            "For example, when a Web address (URL) is "
+                                            "typed into a browser, DNS servers return the "
+                                            "IP address of the Web server associated with "
+                                            "that name. ", font=NORM_FONT, wraplength=550)
+        def_Example.grid(row=15, column=1, padx=(20,0), pady=(0,10), sticky="W")
         # --------------------------------------------------------------
+        # --------------------------------------------------------------
+        # Label that live updates with user input
+        self.defLiveLabel_textVar = StringVar()
+        self.defLiveLabel_textVar.set("Press 'View Current Definition' to see your definiton so far.")
 
+        # Update the label based on user input and button push
+        def textUpdate():
+            self.defLiveLabel_textVar.set(def_input.get())
 
+        defLiveLabel = ttk.Label(self, textvariable=self.defLiveLabel_textVar, font=NORM_FONT, wraplength=550)
+        defLiveLabel.grid(row=18, column=1, padx=(20,0), pady=(0,10), sticky="W")
+
+        # --------------------------------------------------------------
+        # --------------------------------------------------------------
+        def writeFileButton_command():
+            appendToTxtFile(acro_input.get(), title_input.get(), port_input.get(), protocol_input.get(),
+                            tcp_udp_input.get(), def_input.get())
+            acro_input.delete(0, END)
+            title_input.delete(0, END)
+            port_input.delete(0, END)
+            protocol_input.delete(0, END)
+            tcp_udp_input.delete(0, END)
+            def_input.delete(0, END)
+            self.defLiveLabel_textVar.set("...waiting...")
+        # ------------------------
+        writeFileButton = ttk.Button(self, text="Write Txt File", command=lambda: writeFileButton_command(), width=15)
+        writeFileButton.grid(row=20, column=1, padx=(20,0), pady=(0,10), sticky="W")
 
         # ------------------------
-        writeFileButton = ttk.Button(self, text="Write Txt File",
-                                        command=lambda: appendToTxtFile(acro_input.get(), title_input.get(),
-                                                                       port_input.get(), protocol_input.get(),
-                                                                       tcp_udp_input.get(), def_input.get()))
-        writeFileButton.grid(row=16, column=1)
-
-        # ------------------------
-        readFileButton = ttk.Button(self, text="Read Txt File",
-                                        command=readTxtFile)
-        readFileButton.grid(row=17, column=1)
+        # The read was just for the programmer initially
+        setLabelButton = ttk.Button(self, text="View Your Definition", command=lambda: textUpdate())
+        setLabelButton.grid(row=19, column=1, padx=(20,0), pady=(0,10), sticky="W")
 
         # ----------------------------
         # ttk will give us a good looking button
         returHomeButton = ttk.Button(self, text="Return to Home Page",
                              command=lambda: controller.show_frame(StartPage))
-        returHomeButton.grid(row=18, column=1)
+        returHomeButton.grid(row=21, column=0)
 # ==================================================
 # ==================================================
 # ==================================================
@@ -870,13 +872,16 @@ class ChangeFilePAge(ttk.Frame):
     def __init__(self, parent, controller):
         ttk.Frame.__init__(self, parent)
         mainlabel = ttk.Label(self, text="Change File Page", font=XL_FONT)
-        mainlabel.grid(row=0, column=2, padx=(0,0), pady=10, sticky="WE")
+        mainlabel.grid(row=0, column=2, padx=(0,0), pady=5, sticky="WE")
         # ----------------------------
         asklabel = ttk.Label(self, text="Option 1) Press 'Next' to see the next study object."
-                                        "\nOption 2) Enter Position # and press 'Go To Position' to be specific."
-                                        "\n\t0 and 1 will start from beginning."
-                                        "\nPress 'Edit' to change the current study object.", font=LARGE_FONT)
-        asklabel.grid(row=1, column=2, padx=(0,0), pady=10, sticky="WE")
+                                        "\nOption 2) Enter Position # and click 'Go To Position' to be specific."
+                                        "\n\t0 and 1 will both start from the beginning."
+                                        "\nPress the 'Edit' buttons to change the current study attribute."
+                                        "\nDefinitions may seem to be missing lines after you click 'edit'."
+                                        "\n\tJust scroll through the red box, and the new lines will appear."
+                                        "\nIf you want a new line in a definition, add:     **     anywhere. ", font=NORM_FONT)
+        asklabel.grid(row=1, column=2, padx=(0,0), pady=5, sticky="WE")
 
         # Internal position to cycle through the list
         # Start at -1 so that the first click of "Next" will still be 0
@@ -891,7 +896,9 @@ class ChangeFilePAge(ttk.Frame):
         def state_FullFile(position):
             # Will run if the user clicks the Next button
             # If user starts on this page we need to auto read in the file.
-            readTxtFile()
+            # Don't keep reading if we have already, only on -1
+            if self.position ==-1:
+                readTxtFile()
             # Can't go past the list lengths
             if self.position < len(global_fileData)-1:
                 self.position += 1
@@ -913,12 +920,15 @@ class ChangeFilePAge(ttk.Frame):
         # =================
         # --- Go To button method
         def goTo(wanted_position):
+            # We only have to read the file once for sure, at -1
+            if self.position == -1:
+                readTxtFile()
+
             # Called if the goto button is pressed
             if wanted_position == 0:
                 wanted_position = wanted_position
             else:
                 wanted_position = wanted_position-1
-            readTxtFile()
             if wanted_position <= len(global_fileData) -1:
                 self.position = wanted_position
                 print("positionH")
@@ -953,57 +963,45 @@ class ChangeFilePAge(ttk.Frame):
             print("attribute = " + self.attribute)
             if self.attribute == "Acr":
                 self.newInput = "Acronym:     " + new_inputBox.get()
-                #print("new acro = " + self.newInput)
                 acronymLabel_textVar.set(self.newInput)
-                #print("GLOBAL 1 = " + str(global_fileData))
                 global_fileData[self.position].acronym = self.newInput
-                #print("\n\nGLOBAL 2 = " + str(global_fileData))
                 changeTxtFile()
 
             elif self.attribute == "Tit":
                 self.newInput = "Title:           " + new_inputBox.get()
-                #print("new title = " + newInput)
                 titleLabel_textVar.set(self.newInput)
                 global_fileData[self.position].title = self.newInput
-                #print("\n\nGLOBAL 2 = " + str(global_fileData))
                 changeTxtFile()
 
             elif self.attribute == "Por":
                 self.newInput = "Port:           " + new_inputBox.get()
-                #print("new port = " + newInput)
                 portLabel_textVar.set(self.newInput)
                 global_fileData[self.position].port = self.newInput
-                #print("\n\nGLOBAL 2 = " + str(global_fileData))
                 changeTxtFile()
 
             elif self.attribute == "Pro":
                 self.newInput = "Protocol:      " + new_inputBox.get()
-                print("new protocol = " + self.newInput)
                 protocolLabel_textVar.set(self.newInput)
                 global_fileData[self.position].protocol = self.newInput
-                #print("\n\nGLOBAL 2 = " + str(global_fileData))
                 changeTxtFile()
 
             elif self.attribute == "TCP":
                 self.newInput = "TCP_UDP:     " + new_inputBox.get()
-                print("new tcp_udp = " + self.newInput)
                 tcp_udp_Label_textVar.set(self.newInput)
                 global_fileData[self.position].tcp_udp = self.newInput
-                print("\n\nGLOBAL 2 = " + str(global_fileData))
                 changeTxtFile()
 
             elif self.attribute == "Def":
                 self.newInput = "Definition:           " + new_inputBox.get()
-                #print("new definition = " + newInput)
                 definitionLabel_textVar.set(self.newInput)
                 global_fileData[self.position].definition = self.newInput
-                # print("\n\nGLOBAL 2 = " + str(global_fileData))
                 changeTxtFile()
+            callBack_buttons()
 
         # =================
         # --- Edit Acronym button method
         saveButton = ttk.Button(self, text="Save", command=saveNewInput, width=15)
-        new_inputBox = ttk.Entry(self, width=70)
+        new_inputBox = ttk.Entry(self)
 
         def edit_Acronym():
             # self.position   holds the position we want to change
@@ -1013,11 +1011,11 @@ class ChangeFilePAge(ttk.Frame):
             self.attribute = global_fileData[self.position].__str__("acronym")[0:3]
             clear_Labels()
             # Get rid of the top parts
-            gotoButton.destroy()
-            goto_input.destroy()
-            nextButton.destroy()
+            pushAway_Buttons()
+
             # ----------------
             # Create Entry box for the attribute that was selected
+            #new_inputBox = ttk.Entry(self, width=70)
             new_inputBox.configure(foreground="red")
             # ----- attribute includes word 'Acronymm' plus 5 spaces. Remove those
             acronym = global_fileData[self.position].__str__("acronym")
@@ -1025,12 +1023,13 @@ class ChangeFilePAge(ttk.Frame):
             # Show the Value in the entry box in red
             new_inputBox.delete(0, END)
             new_inputBox.insert(END, acronym)
-            new_inputBox.grid(row=7, column=2, padx=(20, 0), sticky="W")
+            new_inputBox.grid(row=7, column=2, padx=(5, 0), sticky="WE")
             # Set the acronym label with the original so user can see what it was
             acronymLabel_textVar.set(global_fileData[self.position].__str__("acronym"))
             # =================
             # --- Display Save button
             # We just showed the button, now the user can click it
+            #saveButton = ttk.Button(self, text="Save", command=saveNewInput, width=15)
             saveButton.grid(row=7, column=1, padx=(20, 0), sticky="W")
         # =================
         def edit_Title():
@@ -1041,9 +1040,8 @@ class ChangeFilePAge(ttk.Frame):
             self.attribute = global_fileData[self.position].__str__("title")[0:3]
             clear_Labels()
             # Get rid of the top parts
-            gotoButton.destroy()
-            goto_input.destroy()
-            nextButton.destroy()
+            pushAway_Buttons()
+
             # ----------------
             # Create Entry box for the attribute that was selected
             new_inputBox.configure(foreground="red")
@@ -1053,7 +1051,7 @@ class ChangeFilePAge(ttk.Frame):
             # Show the Value in the entry box in red
             new_inputBox.delete(0, END)
             new_inputBox.insert(END, title)
-            new_inputBox.grid(row=7, column=2, padx=(20, 0), sticky="W")
+            new_inputBox.grid(row=7, column=2, padx=(5, 0), sticky="WE")
             # Set the acronym label with the original so user can see what it was
             titleLabel_textVar.set(global_fileData[self.position].__str__("title"))
             # =================
@@ -1069,9 +1067,8 @@ class ChangeFilePAge(ttk.Frame):
             self.attribute = global_fileData[self.position].__str__("port")[0:3]
             clear_Labels()
             # Get rid of the top parts
-            gotoButton.destroy()
-            goto_input.destroy()
-            nextButton.destroy()
+            pushAway_Buttons()
+
             # ----------------
             # Create Entry box for the attribute that was selected
             new_inputBox.configure(foreground="red")
@@ -1081,7 +1078,7 @@ class ChangeFilePAge(ttk.Frame):
             # Show the Value in the entry box in red
             new_inputBox.delete(0, END)
             new_inputBox.insert(END, port)
-            new_inputBox.grid(row=7, column=2, padx=(20, 0), sticky="W")
+            new_inputBox.grid(row=7, column=2, padx=(5, 0), sticky="WE")
             # Set the acronym label with original
             portLabel_textVar.set(global_fileData[self.position].__str__("port"))
             # =================
@@ -1097,9 +1094,8 @@ class ChangeFilePAge(ttk.Frame):
             self.attribute = global_fileData[self.position].__str__("protocol")[0:3]
             clear_Labels()
             # Get rid of the top parts
-            gotoButton.destroy()
-            goto_input.destroy()
-            nextButton.destroy()
+            pushAway_Buttons()
+
             # ----------------
             # Create Entry box for the attribute that was selected
             new_inputBox.configure(foreground="red")
@@ -1109,7 +1105,7 @@ class ChangeFilePAge(ttk.Frame):
             # Show the Value in the entry box in red
             new_inputBox.delete(0, END)
             new_inputBox.insert(END, protocol)
-            new_inputBox.grid(row=7, column=2, padx=(20, 0), sticky="W")
+            new_inputBox.grid(row=7, column=2, padx=(5, 0), sticky="WE")
             # Set the acronym label with original
             protocolLabel_textVar.set(global_fileData[self.position].__str__("protocol"))
             # =================
@@ -1125,9 +1121,8 @@ class ChangeFilePAge(ttk.Frame):
             self.attribute = global_fileData[self.position].__str__("tcp_udp")[0:3]
             clear_Labels()
             # Get rid of the top parts
-            gotoButton.destroy()
-            goto_input.destroy()
-            nextButton.destroy()
+            pushAway_Buttons()
+
             # ----------------
             # Create Entry box for the attribute that was selected
             new_inputBox.configure(foreground="red")
@@ -1137,13 +1132,13 @@ class ChangeFilePAge(ttk.Frame):
             # Show the Value in the entry box in red
             new_inputBox.delete(0, END)
             new_inputBox.insert(END, tcp_udp)
-            new_inputBox.grid(row=7, column=2, padx=(20, 0), sticky="W")
+            new_inputBox.grid(row=7, column=2, padx=(5, 0), sticky="W")
             # Set the acronym label with original
             tcp_udp_Label_textVar.set(global_fileData[self.position].__str__("tcp_udp"))
             # =================
             # --- Display Save button
             # We just showed the button, now the user can click it
-            saveButton.grid(row=7, column=1, padx=(20, 0), sticky="W")
+            saveButton.grid(row=7, column=1, padx=(20, 0), sticky="WE")
         # =================
         def edit_Definition():
             # self.position   holds the position we want to change
@@ -1153,9 +1148,7 @@ class ChangeFilePAge(ttk.Frame):
             self.attribute = global_fileData[self.position].__str__("definition")[0:3]
             clear_Labels()
             # Get rid of the top parts
-            gotoButton.destroy()
-            goto_input.destroy()
-            nextButton.destroy()
+            pushAway_Buttons()
             # ----------------
             # Create Entry box for the attribute that was selected
             new_inputBox.configure(foreground="red")
@@ -1165,7 +1158,7 @@ class ChangeFilePAge(ttk.Frame):
             # Show the Value in the entry box in red
             new_inputBox.delete(0, END)
             new_inputBox.insert(END, definition)
-            new_inputBox.grid(row=7, column=2, padx=(20, 0), sticky="W")
+            new_inputBox.grid(row=7, column=2, padx=(5, 0), sticky="WE")
             # Set the acronym label with original
             definitionLabel_textVar.set(global_fileData[self.position].__str__("definition"))
             # =================
@@ -1173,27 +1166,58 @@ class ChangeFilePAge(ttk.Frame):
             # We just showed the button, now the user can click it
             saveButton.grid(row=7, column=1, padx=(20, 0), sticky="W")
 
-                # =================
+            # =================
         # =================
+        def pushAway_Buttons():
+            # This is to hide the goto button, goto Entry and next button
+            # This is to display the save button and new input box.
+            new_inputBox.grid(row=7, column=2, padx=(20, 0), sticky="W")
+            saveButton.grid(row=7, column=1, padx=(20, 0), sticky="W")
 
+            gotoButton.grid(row=3, column=20, padx=(20, 0), sticky="E")
+            goto_input.grid(row=4, column=20, padx=(20, 0), sticky="E")
+            nextButton.grid(row=5, column=20, padx=(20, 0), pady=(20, 0), sticky="E")
+        # =================
+        def callBack_buttons():
+            # This is to hide the save button and input box
+            # This is to bring back the goto button, next button, inputbox, display labels
+            # Hidden Save Position
+            saveButton.grid(row=7, column=20, padx=(20, 0), sticky="E")
+            new_inputBox.grid(row=7, column=20, padx=(20, 0), sticky="E")
+
+            # =================
+            # Original position
+            gotoButton.grid(row=3, column=2, padx=(0, 0), sticky="W")
+            goto_input.grid(row=4, column=2, padx=(20, 0), sticky="W")
+            nextButton.grid(row=5, column=2, padx=(0, 0), pady=(20, 0), sticky="W")
+
+            #
+            acronymLabel_textVar.set(global_fileData[self.position].__str__("acronym"))
+            titleLabel_textVar.set(global_fileData[self.position].__str__("title"))
+            portLabel_textVar.set(global_fileData[self.position].__str__("port"))
+            protocolLabel_textVar.set(global_fileData[self.position].__str__("protocol"))
+            tcp_udp_Label_textVar.set(global_fileData[self.position].__str__("tcp_udp"))
+            definitionLabel_textVar.set(global_fileData[self.position].__str__("definition"))
         # =================
         # --- Goto button
         # User can enter an int to view a specifc position
-        gotoButton = ttk.Button(self, text="Go To Position 1,2,3...:",
+        gotoButton = ttk.Button(self, text="Go To Position:",
                                 command=lambda: goTo(int(goto_input.get())))
-        gotoButton.grid(row=3, column=2, padx=(0,0), sticky="W")
+        gotoButton.grid(row=3, column=2, padx=(5,0), sticky="W")
+
         # ----------------------------
         # Can't change anything other than foreground....internet has not been helpful
         goto_input = ttk.Entry(self, width=10)
         goto_input.configure(foreground="red")
         goto_input.insert(END, '0')
-        goto_input.grid(row=4, column=2, padx=(20,0), sticky="W")
+        goto_input.grid(row=4, column=2, padx=(40,0), sticky="W")
+
         # =================
         # =================
         # =================
         # --- Next button
         nextButton = ttk.Button(self, text="Next", command=lambda: state_FullFile(self.position))
-        nextButton.grid(row=5, column=2, padx=(0,0), pady=(20,0), sticky="W")
+        nextButton.grid(row=5, column=2, padx=(5,0), pady=(10,0), sticky="W")
         # ----------------------------
         # =================
         # --- Position label
@@ -1203,7 +1227,7 @@ class ChangeFilePAge(ttk.Frame):
         # I don't know if we need this on the other 5 yet
         viewFileLabel = ttk.Label(self, textvariable=viewFileLabel_textVar,
                                     font=LARGE_FONT, wraplength=700)
-        viewFileLabel.grid(row=8, column=2, sticky="W", padx=(0,0), pady=(0,30))
+        viewFileLabel.grid(row=8, column=2, sticky="W", padx=(5,0), pady=(0,10))
         # =================
         # ===================================================
         # ===================================================
@@ -1282,11 +1306,10 @@ class ChangeFilePAge(ttk.Frame):
         # ===================================================
         # ===================================================
         # =================
-        # =================
         # ----------------------------
         # Button to go back home
         returHomeButtonf = ttk.Button(self, text=" Return Home",
-                             command=lambda: controller.show_frame(StartPage))
+                             command=lambda: controller.show_frame(StartPage), width=73)
         returHomeButtonf.grid(row=17, column=2, sticky="WE", padx=(0,0))
 # ==================================================
 # ==================================================
@@ -1330,10 +1353,16 @@ class StudyPage(ttk.Frame):
         keybind_label1B = ttk.Label(self, text="Move to Next Position", font=NORM_FONT)
         keybind_label1B.grid(row=1, column=2, padx=10, sticky="W")
         # -----
-        keybind_label2A = ttk.Label(self, text="Keyboard: Space Bar -", font=NORM_FONT)
-        keybind_label2A.grid(row=2, column=1, padx=10, pady=(0,20),  sticky="W")
+        keybind_label2A = ttk.Label(self, text="Keyboard: Down Arrow -", font=NORM_FONT)
+        keybind_label2A.grid(row=2, column=1, padx=10, sticky="W")
         keybind_label2B = ttk.Label(self, text="Show All Traits", font=NORM_FONT)
-        keybind_label2B.grid(row=2, column=2, padx=10, pady=(0,20), sticky="W")
+        keybind_label2B.grid(row=2, column=2, padx=10, sticky="W")
+        # -----
+        keybind_label3A = ttk.Label(self, text="Keyboard: Up Arrow -", font=NORM_FONT)
+        keybind_label3A.grid(row=3, column=1, padx=10, pady=(0,20),  sticky="W")
+        keybind_label3B = ttk.Label(self, text="Acronym > Title > Port > Protocol > TCP/UDP > Definition",
+                                    font=NORM_FONT)
+        keybind_label3B.grid(row=3, column=2, padx=10, pady=(0,20), sticky="W")
         # ==================================================
         # Built funciton to clear the labels.
         # Used in:   next_StudyObject():   &&   random_StudyObject():
@@ -1345,6 +1374,8 @@ class StudyPage(ttk.Frame):
             protocolLabel_textVar.set(":")
             tcp_udp_Label_textVar.set(":")
             definitionLabel_textVar.set(":")
+            self.attribute_count = 1
+
 
         # ==================================================
         self.studyNumber = 0
@@ -1362,10 +1393,10 @@ class StudyPage(ttk.Frame):
 
             # We need to clear the current labels
             clear_Labels()
-            print(self.studyNumber) # Print the current number. Just show
+            #print(self.studyNumber) # Print the current number. Just show
             if self.studyNumber < len(global_fileData)-1:
                 self.studyNumber += 1
-                print(self.studyNumber)
+                #print(self.studyNumber)
                 listPositionLabel_textVar.set(state_currentPosition())
 
             else:
@@ -1379,39 +1410,11 @@ class StudyPage(ttk.Frame):
 
             # We need to clear the current labels
             clear_Labels()
-            print(self.studyNumber)
+            #print(self.studyNumber)
             # Don't go past the last one.
             self.studyNumber = random.randint(0, len(global_fileData)-1)
-            print(self.studyNumber)
+            #print(self.studyNumber)
             listPositionLabel_textVar.set(state_currentPosition())
-
-        # ==================================================
-        # Clear the traits, but it will stay on the current object. If the user wants to repeat
-        def clear_Page():
-            pass
-
-        # ==================================================
-        # Automatically get the object list of our study txt file.
-        # printrtn(): method is just for programmer show, not the user.
-
-        def printrtn(): # ==================================================
-            readTxtFile()
-            print("\nGlobal File Data = ")
-            print(global_fileData)
-            # ---------
-            # Currently we are just asking to get the last on in the list.
-            # The __repr__ prints the full value of the studyObject.
-            # We created the __repr__ in the class inputObject
-            print("\nGlobal File Data[Lastone] repr data=",
-                  global_fileData[self.studyNumber].__repr__()) # works
-            # ---------
-            # __str__ currently prints:      Acronym:      FTP
-            #   We created the __str__ in the class inputObject
-            #   __str__()   depends on the sent piece: (acronym, title, port, protocol, tcp_udp, definition)
-            #   We have it printing from the last one in the list currently
-            print("\nGlobal File Data[Lastone] str data =",
-                  global_fileData[self.studyNumber].__str__("acronym")) # works
-            # ---------
 
         # ==================================================
         # ----------------------------
@@ -1421,34 +1424,52 @@ class StudyPage(ttk.Frame):
         # The button calls this method while sending the stated value that they want.
         # readTxtFile(): Make sure that the global_list is refreshed when the 6 buttons are clicked
         def state_Acronym():
-            readTxtFile()
-            print(global_fileData[self.studyNumber].__str__("acronym"))
+            # Make sure we have imported a list on the first round.
+            if self.studyNumber == 0:
+                readTxtFile()
+            #print(global_fileData[self.studyNumber].__str__("acronym"))
             acronymLabel_textVar.set(global_fileData[self.studyNumber].__str__("acronym"))
+            self.attribute_count = 2
         # ----------------------------
         def state_Title():
-            readTxtFile()
-            print(global_fileData[self.studyNumber].__str__("title"))
+            # Make sure we have imported a list on the first round.
+            if self.studyNumber == 0:
+                readTxtFile()
+            #print(global_fileData[self.studyNumber].__str__("title"))
             titleLabel_textVar.set(global_fileData[self.studyNumber].__str__("title"))
+            self.attribute_count = 3
         # ----------------------------
         def state_Port():
-            readTxtFile()
-            print(global_fileData[self.studyNumber].__str__("port"))
+            # Make sure we have imported a list on the first round.
+            if self.studyNumber == 0:
+                readTxtFile()
+            #print(global_fileData[self.studyNumber].__str__("port"))
             portLabel_textVar.set(global_fileData[self.studyNumber].__str__("port"))
+            self.attribute_count = 4
         # ----------------------------
         def state_Protocol():
-            readTxtFile()
-            print(global_fileData[self.studyNumber].__str__("protocol"))
+            # Make sure we have imported a list on the first round.
+            if self.studyNumber == 0:
+                readTxtFile()
+            #print(global_fileData[self.studyNumber].__str__("protocol"))
             protocolLabel_textVar.set(global_fileData[self.studyNumber].__str__("protocol"))
+            self.attribute_count = 5
         # ----------------------------
         def state_Tcp_Udp():
-            readTxtFile()
-            print(global_fileData[self.studyNumber].__str__("tcp_udp"))
+            # Make sure we have imported a list on the first round.
+            if self.studyNumber == 0:
+                readTxtFile()
+            #print(global_fileData[self.studyNumber].__str__("tcp_udp"))
             tcp_udp_Label_textVar.set(global_fileData[self.studyNumber].__str__("tcp_udp"))
+            self.attribute_count = 6
         # ----------------------------
         def state_Definition():
-            readTxtFile()
-            print(global_fileData[self.studyNumber].__str__("definition"))
+            # Make sure we have imported a list on the first round.
+            if self.studyNumber == 0:
+                readTxtFile()
+            #print(global_fileData[self.studyNumber].__str__("definition"))
             definitionLabel_textVar.set(global_fileData[self.studyNumber].__str__("definition"))
+            self.attribute_count = 7
         # ----------------------------
         def state_All6():
             state_Acronym()
@@ -1466,57 +1487,57 @@ class StudyPage(ttk.Frame):
         # ----------------------------
         # --- Acronym button
         stateAcronymButton = ttk.Button(self, text="Acronym", command=state_Acronym, width=10)
-        stateAcronymButton.grid(row=3, column=1, sticky="W", padx=(20,0), pady=(0,20))
+        stateAcronymButton.grid(row=4, column=1, sticky="W", padx=(20,0), pady=(0,20))
         # --- Acronym label
         acronymLabel_textVar = StringVar()
         acronymLabel_textVar.set(':')
         acronymLabel = ttk.Label(self, textvariable=acronymLabel_textVar, font=LARGE_FONT)
-        acronymLabel.grid(row=3, column=2, sticky="W", pady=(0,20))
+        acronymLabel.grid(row=4, column=2, sticky="W", pady=(0,20))
         # ----------------------------
         # ----------------------------
         # --- Title button
         stateTitleButton = ttk.Button(self, text="Title", command=state_Title, width=10)
-        stateTitleButton.grid(row=4, column=1, sticky="W", padx=(20,0), pady=(0,20))
+        stateTitleButton.grid(row=5, column=1, sticky="W", padx=(20,0), pady=(0,20))
         # --- Title label
         titleLabel_textVar = StringVar()
         titleLabel_textVar.set(':')
         titleLabel = ttk.Label(self, textvariable=titleLabel_textVar, font=LARGE_FONT)
-        titleLabel.grid(row=4, column=2, sticky="W", pady=(0,20))
+        titleLabel.grid(row=5, column=2, sticky="W", pady=(0,20))
         # ----------------------------
         # ----------------------------
         # --- Port button
         statePortButton = ttk.Button(self, text="Port", command=state_Port, width=10)
-        statePortButton.grid(row=5, column=1, sticky="W", padx=(20,0), pady=(0,20))
+        statePortButton.grid(row=6, column=1, sticky="W", padx=(20,0), pady=(0,20))
         # --- Port label
         portLabel_textVar = StringVar()
         portLabel_textVar.set(':')
         portLabel = ttk.Label(self, textvariable=portLabel_textVar, font=LARGE_FONT)
-        portLabel.grid(row=5, column=2, sticky="W", pady=(0,20))
+        portLabel.grid(row=6, column=2, sticky="W", pady=(0,20))
         # ----------------------------
         # ----------------------------
         # --- Protocol button
         stateProtocolButton = ttk.Button(self, text="Protocol", command=state_Protocol, width=10)
-        stateProtocolButton.grid(row=6, column=1, sticky="W", padx=(20,0), pady=(0,20))
+        stateProtocolButton.grid(row=7, column=1, sticky="W", padx=(20,0), pady=(0,20))
         # --- Protocol label
         protocolLabel_textVar = StringVar()
         protocolLabel_textVar.set(':')
         protocolLabel = ttk.Label(self, textvariable=protocolLabel_textVar, font=LARGE_FONT)
-        protocolLabel.grid(row=6, column=2, sticky="W", pady=(0,20))
+        protocolLabel.grid(row=7, column=2, sticky="W", pady=(0,20))
         # ----------------------------
         # ----------------------------
         # --- TCP_UDP button
         state_tcp_udp_Button = ttk.Button(self, text="TCP/UDP", command=state_Tcp_Udp, width=10)
-        state_tcp_udp_Button.grid(row=7, column=1, sticky="W", padx=(20,0), pady=(0,20))
+        state_tcp_udp_Button.grid(row=8, column=1, sticky="W", padx=(20,0), pady=(0,20))
         # --- TCP_UDP label
         tcp_udp_Label_textVar = StringVar()
         tcp_udp_Label_textVar.set(':')
         tcp_udp_Label = ttk.Label(self, textvariable=tcp_udp_Label_textVar, font=LARGE_FONT)
-        tcp_udp_Label.grid(row=7, column=2, sticky="W", pady=(0,20))
+        tcp_udp_Label.grid(row=8, column=2, sticky="W", pady=(0,20))
         # ----------------------------
         # ----------------------------
         # --- Definition button
         stateDefinitionButton = ttk.Button(self, text="Definition", command=state_Definition, width=10)
-        stateDefinitionButton.grid(row=8, column=1, sticky="WN", padx=(20,0), pady=(0,20))
+        stateDefinitionButton.grid(row=9, column=1, sticky="WN", padx=(20,0), pady=(0,20))
         # --- Definition label
         definitionLabel_textVar = StringVar()
         definitionLabel_textVar.set(':')
@@ -1524,7 +1545,7 @@ class StudyPage(ttk.Frame):
         # I don't know if we need this on the other 5 yet
         definitionLabel = ttk.Label(self, textvariable=definitionLabel_textVar,
                                     font=NORM_FONT, wraplength=550)
-        definitionLabel.grid(row=8, column=2, sticky="W", pady=(0,20))
+        definitionLabel.grid(row=9, column=2, sticky="W", pady=(0,20))
         # ----------------------------
         # ----------------------------
         # --- StateAll button
@@ -1561,19 +1582,44 @@ class StudyPage(ttk.Frame):
             # If we are on this StudyPage, the right keyboard button will move to the next object
             if len(event.char) == 1:
             # charcters like []/.,><#$ also Return and ctrl/key
-                readTxtFile()
+                #readTxtFile()
                 print('Punctuation666 Key %r (%r)' % (event.keysym, event.char))
                 next_StudyObject()
-        # -----
         increaseByOneButton.bind_all('<Right>', right_Key)
         # ----------------------------
-        def space_Bar(event):
+        def down_Key(event):
             if len(event.char) == 1:
             # charcters like []/.,><#$ also Return and ctrl/key
-                readTxtFile()
+                #readTxtFile()
                 print('Punctuation666 Key %r (%r)' % (event.keysym, event.char))
                 state_All6()
-        stateAllButton.bind_all('<space>', space_Bar)
+        stateAllButton.bind_all('<Down>', down_Key)
+        # ----------------------------
+        self.attribute_count=1
+        def ac_ti_po_pr_tc_de():
+            if self.attribute_count == 1:
+                state_Acronym()
+            elif self.attribute_count == 2:
+                state_Title()
+            elif self.attribute_count == 3:
+                state_Port()
+            elif self.attribute_count == 4:
+                state_Protocol()
+            elif self.attribute_count == 5:
+                state_Tcp_Udp()
+            elif self.attribute_count == 6:
+                state_Definition()
+            elif self.attribute_count == 7:
+                clear_Labels()
+
+        def up_Key(event):
+            if len(event.char) == 1:
+            # charcters like []/.,><#$ also Return and ctrl/key
+                #readTxtFile()
+                print('Punctuation666 Key %r (%r)' % (event.keysym, event.char))
+                ac_ti_po_pr_tc_de()
+        stateAllButton.bind_all('<Up>', up_Key)
+        # ----------------------------
         # ----------------------------
         # ----------------------------
         # ----------------------------
@@ -1598,7 +1644,7 @@ class KeyLoggerPage(ttk.Frame):
     # If you go to this page it simply prints your keys that you press.
     # This does nothing, but I want to use it on the other pages
     #       and am just testing it out.
-    # The right arrow and space bar are permanently tied to the Study Page bind functions,
+    # The right arrow and down arrow are permanently tied to the Study Page bind functions,
     #       not sure why at the momemnt.
     '''
         If I press the Right arrow it will print:
@@ -1613,7 +1659,7 @@ class KeyLoggerPage(ttk.Frame):
         mainlabel2 = ttk.Label(self, text="Press ESC to Return Home", font=LARGE_FONT)
         mainlabel2.grid(row=1, column=2, padx=(50,0), pady=10, sticky="WE")
 
-        currentErrorlabel = ttk.Label(self, text="The Right Arrow and Space bar, seem to be "
+        currentErrorlabel = ttk.Label(self, text="The Right Arrow and Down Arrow, seem to be "
                                                  "\n permanently tied to the Study Page Functions."
                                                  "\n Not sure why.", font=NORM_FONT)
         currentErrorlabel.grid(row=2, column=2, padx=(50,0), pady=10, sticky="WE")

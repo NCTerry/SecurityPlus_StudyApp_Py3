@@ -1,0 +1,240 @@
+Acronym:     -
+Title:           Routers
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:
+    b.	If you hear Layer 2 = Switch
+    c.	If you hear Layer 3 = Router
+    d.	Routers can connect diverse network types: LAN, WAN, Copper, Fiber.
+    e.	If you see a 90-Degree symbol, it is likely referring to the router.
+    f.	Routers do not make a good firewall.
+###
+Acronym:     -
+Title:           Firewalls
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:
+1.	Firewall _ Layer 4 TCPUDP
+    a.	Technically it can be the layer 3 router acting as the firewall.
+    b.	Some do filter through layer 7.
+    c.	Usually sits on the ingress/egress of the network.
+    d.	Can encrypt traffic into/out of the network, to protect traffic between sites.
+    e.	Firewall can act as a proxy. Traditional method to separate internal networks from                  internet. Talking to the proxy, instead of the internet. The proxy takes your request and           send to the internet.
+###
+Acronym:     -
+Title:           Load Balancers
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:
+a.	Distribute traffic from the internet to a cluster of private servers. When I contact Google, they have many servers across the world that I may be interacting with.
+b.	Servers may be distributed based on what they have to offer, pictures, videos, maps, regions. The load balancer needs to be able to distribute based on the content, and/or the load.
+c.	The servers may have all the same stuff, but if you send too many users to one, it can be overused.
+d.	All servers need to have the proper security updates.
+###
+Acronym:     -
+Title:           Proxies
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:
+a.	User has their machine, on the network. If they send a request to the internet, it will go first through a proxy.
+b.	The proxy stops everyone in the network, and re-configures the user request so that the request will be returned to the proxy, which will then re-direct to the user who sent it.
+c.	Proxies can cache to save requests and bandwidth. If a user makes a request to a site and the site sends a response, the Proxy can hold that info so that if another user makes the same request, the proxy can just re_gurgitate that cached information.
+d.	User needs to make sure the configure their network to interact through the proxy that is holding the network. This is an explicit proxy.
+e.	There is a transparent proxy as well. Transparent proxies mean that you do not have to configure anything for users.
+f.	Sometimes applications will not work properly through a transparent proxy.
+g.	This may mean that you have to make an exception for an app, which can lead to security issues.
+###
+Acronym:     UTM
+Title:           Unified Threat Management
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:
+a.	AKA - Web Security Gateway  This is an all-in-one security appliance.
+b.	Will have:
+    i.	URL Filter _ Site content inspection. Is this porn?
+    ii.	Malware Inspection
+    iii.	Spam Filter
+    iv.	CSU/DSU
+    v.	Router/Switch Attached
+    vi.	Firewall Attached
+    vii.	IDS/IPS
+    viii.	Bandwidth Shaper _ Limit people in your network who are watching YouTube videos.
+###
+Acronym:     NIPS  &&  NIDS 
+Title:           Network Intrusion Prevention || Detection
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:
+a.	System built to watch the traffic and check for vulnerabilities/threats.
+b.	Check for:
+    i.	Buffer overflows
+    ii.	Cross Site Scripting
+    iii.	etc
+c.	Detection vs Prevention
+    i.	Detection > alarm or alert
+    ii.	Prevention > Stop it before it gets into the network.
+1.	If you are preventing, you need to make sure that you are not also preventing legitimate traffic.
+###
+Acronym:     -
+Title:           Identification Technologies
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:
+a.	Signature Based Match _ does this code coming over the network match known malware. The photo below shows a known signature of a malware worm. Regardless of the situation, if this hexadecimal signature is detected anywhere, we know what it is and to prevent it.
+b.	Anomaly Based Detection
+    i.	We build a baseline on what we think is normal in all situations. Do we have bandwidth spikes? Do we have too many people trying to log on?
+c.	Behavior Based
+    i.	Does a specific individual log on and try to access something that they do not normally access?
+d.	Heuristics
+    i.	Use Artificial intelligence to identify.
+    ii.	See a type of traffic flow come into the network, and see if it changes. Does this traffic contain good or bad packets? AI can keep learning.
+A signature match is black and white, while Heuristics is ever changing and adapting to new situations and new users
+###
+Acronym:     -
+Title:           Protocol Analyzer
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:
+a.	Sniffer _ capture packets from the network to analyze and identify. Note "Sniffer" is technically a registered trademark.
+b.	There are many ways to capture and analyze packets to be shown in plain English
+c.	Wireshark 
+###
+Acronym:     -
+Title:           Spam Filters
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:
+    a.	Focused on stopping unsolicited email.
+    b.	Stop it at the gateway before it reaches the user.
+    c.	Can be on-site.
+    d.	Can be cloud-based. Will be filtered before being sent to your relay.
+    e.	How to identify:
+        i.	Whitelist: Only receive mail from those on the list.
+        ii.	SMTP _ Simple Mail Transfer Protocol
+    1.	Block anything that doesnt follow RFC standards
+    2.	Spammer often doesnt follow standards.
+iii.	rDNS _ Reverse DNS
+    1.	Block email if the senders domain does not match the IP address
+    2.	If sender is from the US but the IP comes from outside US
+iv.	Tarpitting _ Intentionally slows down the server conversation.
+    1.	Spammers try to send as many emails as possible in as short as time as possible.
+    2.	We can slow down the conversation. The spammer expects your machine to respond in some way in just a few milliseconds. If you auto delay your machines response_ the spammer may automatically skip your IP since it doesnt appear to be valid.
+        v.	Recipient Filtering
+    1.	Block all email not addressed to a valid recipient.
+###
+Acronym:     URL
+Title:           -
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:           -
+###
+Acronym:     CSU/DSU
+Title:           -
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:           -
+###
+Acronym:     IDS
+Title:           -
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:           -
+###
+Acronym:     IPS
+Title:           Internet Provider Security
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:
+a. Internet Provider Security _IPS_ tags are used by domain registrar to administer a domain name registration service and related Domain Name System (DNS) services. An IPS tag is the label that applies to each registrar that registers domains in the country_code top level domain UK and is required to transfer domain names from one registrar to another.
+b. The original meaning of IPS tag was created and lost with Nominet UK_s predecessor, the Naming Committee; however it is widely accepted that it probably stands for Internet Provider Security tag. The term IPS tag itself is considered obsolete by Nominet UK, and has since been replaced by the term registrar tag.
+c. Transferring a domain name from one registrar to another requires the original registrar to change the IPS tag to that of the new registrar. Domain name owners can often, but not always, change this tag themselves in the respective domain management control panels.
+###
+Acronym:     VPN
+Title:           -
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:           -
+###
+Acronym:     WAF
+Title:           Web Application Firewall
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:           a.	Looks at web conversations, and determines if the packets/information is legitimate. Is that really a zip-code, or serial number that is being put into the application.
+b.	If the app requires a user to enter a serial number to access something, a hacker can just enter a random number to try and get in the front door. First step is to make sure that the number is an actual serial number.
+c.	If not protected, invalid data can at times allow access behind the scenes.
+d.	This can allow a SQL injection, if the app wasnt written well and allow behind the scenes access. Even if the app is poorly written, the WAF can still block access.
+###
+Acronym:     PCI
+Title:           Payment Card Industry
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:           Payments with credit cards. You dont want people to have access to credit cards. 
+Tied closely to the DSS
+###
+Acronym:     DSS
+Title:           Data Security Standard
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:           This have standards that are required if your company stores credit cards. 
+###
+Acronym:     -
+Title:           OSI Application Layer
+Port:           -
+Protocol:      Application Aware Security 
+TCP/UDP:     -
+Definition:
+a.	OSI Application Layer _ examine every bit of data that moves through the network.
+    i.	Analyze protocols and how the applications are being used and communicating between devices.
+    ii.	Other Names:
+        1.	Application Layer Gateway
+        2.	Stateful Multilayer Inspection
+        3.	Deep Packet Inspection
+###
+Acronym:     -
+Title:           Network Based Firewalls
+Port:           -
+Protocol:      Application Aware Security Devices
+TCP/UDP:     -
+Definition:
+a.	Network Based Firewalls
+    i.	Control traffic flows based on the application. You can allow what applications can be used. Ex. Twitter, Microsoft SQL server, YouTube.
+###
+Acronym:     IPS
+Title:           Intrusion Prevention System
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:
+a.	Intrusion Prevention Systems
+    i.	Identify an application
+    ii.	Apply application specific vulnerability signatures to the traffic.
+    iii.	Prevent attackers from taking advantage of something in a server or an application, that is allowed in the network.
+###
+Acronym:     -
+Title:           Host Based Firewalls
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:
+a.	Host Based Firewalls
+    i.	Work with the OS to determine the application.
+    ii.	Knows what applications are on and are allowed on the network or device.
+    iii.	It will also know who else should have access.
+###

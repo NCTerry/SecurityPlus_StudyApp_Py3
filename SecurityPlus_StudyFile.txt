@@ -1,21 +1,114 @@
+Acronym:     -
+Title:           Domain Name System
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:           The internets system is going to change
 ###
-Acronym:     FTP-123
-Title:           File Transfer Protocol-123
-Port:           21-123
-Protocol:      N/A -123
-TCP_UDP:     TCP-123
-Definition:           123 - The File Transfer Protocol (FTP) is a standard network protocol used for the transfer of computer files between a client and server on a computer network.FTP is built on a client-server model architecture and uses separate control and data connections between the client and the server. FTP users may authenticate themselves with a clear-text sign-in protocol, normally in the form of a username and password, but can connect anonymously if the server is configured to allow it. For secure transmission that protects the username and password, and encrypts the content, FTP is often secured with SSL/TLS (FTPS). SSH File Transfer Protocol (SFTP) is sometimes also used instead; it is technologically different. The first FTP client applications were command-line programs developed before operating systems had graphical user interfaces, and are still shipped with most Windows, Unix, and Linux operating systems. Many FTP clients and automation utilities have since been developed for desktops, servers, mobile devices, and hardware, and FTP has been incorporated into productivity applications, such as web page editors.
+Acronym:     -
+Title:           Routers
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:               
+b.	If you hear Layer 2 = Switch    
+c.	If you hear Layer 3 = Router    
+d.	Routers can connect diverse network types: LAN, WAN, Copper, Fiber.    
+e.	If you see a 90-Degree symbol, it is likely referring to the router.    
+f.	Routers do not make a good firewall.
 ###
-Acronym:     SSH
-Title:           Secure Shell
-Port:           N/A
-Protocol:      N/A
-TCP/UDP:     N/A
-Definition:           SSH, also known as Secure Socket Shell, is a network protocol that provides administrators with a secure way to access a remote computer. SSH also refers to the suite of utilities that implement the protocol. Secure Shell provides strong authentication and secure encrypted data communications between two computers connecting over an insecure network such as the Internet. SSH is widely used by network administrators for managing systems and applications remotely, allowing them to log in to another computer over a network, execute commands and move files from one computer to another.SSH can refer both to the cryptographic network protocol and to the suite of utilities that implement that protocol. SSH uses the client-server model, connecting a secure shell client application, the end at which the session is displayed, with an SSH server, the end at which the session runs.Apart from Microsoft Windows, SSH software is included by default on most operating systems. SSH also supports tunneling, forwarding arbitrary TCP ports and X11 connections while file transfer can be accomplished using the associated secure file transfer or secure copy (SCP) protocols. An SSH server, by default, listens on the standard TCP port 22.The SSH suite comprises three utilities: slogin, ssh and scp; that are secure versions of the earlier insecure UNIX utilities, rlogin, rsh, and rcp. SSH uses public-key cryptography to authenticate the remote computer and allow the remote computer to authenticate the user, if necessary.
+Acronym:     -
+Title:           Firewalls
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:
+1.	Firewall _ Layer 4 TCPUDP
+a.	Technically it can be the layer 3 router acting as the firewall.
+b.	Some do filter through layer 7.
+c.	Usually sits on the ingress/egress of the network.
+d.	Can encrypt traffic into/out of the network, to protect traffic between sites.
+e.	Firewall can act as a proxy. Traditional method to separate internal networks from                  internet. Talking to the proxy, instead of the internet. The proxy takes your request and send to the internet.
+###
+Acronym:     -
+Title:           Load Balancers
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:
+a.	Distribute traffic from the internet to a cluster of private servers. When I contact Google, they have many servers across the world that I may be interacting with.
+b.	Servers may be distributed based on what they have to offer, pictures, videos, maps, regions. The load balancer needs to be able to distribute based on the content, and/or the load.
+c.	The servers may have all the same stuff, but if you send too many users to one, it can be overused.d.	All servers need to have the proper security updates.
+###
+Acronym:     -
+Title:           Load Balancer
+Port:           212
+Protocol:      -
+TCP_UDP:     -
+Definition:
+a.	Distribute traffic from the internet to a cluster of private servers. When I contact Google, they have many servers across the world that I may be interacting with.
+b.	Servers may be distributed based on what they have to offer, pictures, videos, maps, regions. The load balancer needs to be able to distribute based on the content, and/or the load.
+c.	The servers may have all the same stuff, but if you send too many users to one, it can be overused.
+d.	All servers need to have the proper security updates.
 ###
 Acronym:     NCT
-Title:           Nate
+Title:           NATE
 Port:           Terry
+Protocol:      -
+TCP/UDP:     -
+Definition:           HERE WE are again 
+ Does this change things
+###
+Acronym:     AKA
+Title:           Ashley Kayla Adam
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:           I like Curly hair
+What will happen on the third one? 
+Push us here
+###
+Acronym:     ZAC
+Title:           Zachary
+Port:           Alexander
 Protocol:      31
-TCP/UDP:     N/A
-Definition:           He is trying really hard
+TCP/UDP:     -
+Definition:           
+Zach
+Alexander
+Carey
+Brother
+to
+Mark
+###
+Acronym:     DDR
+Title:           Dance
+Port:           David
+Protocol:      Revolution
+TCP/UDP:     -
+Definition:           ---Derek David Rouch
+---Derek David Rouch
+---Derek David Rouch
+---Derek David Rouch
+---
+###
+Acronym:     Benjamin
+Title:           BRT
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:           Ben
+---Ben   Ben 
+--- Ben
+###
+Acronym:     Ken
+Title:           KAT
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:           Ken
+---Ken
+---Ken
+---Ken
+---Ken
+###
