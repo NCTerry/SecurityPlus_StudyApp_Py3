@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="988e2f5d-25fd-4970-a031-185796f01b86" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SecurityPlus_StudyApp.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Py3_SecurityPlus_StudyApp.iml" afterPath="$PROJECT_DIR$/.idea/Py3_SecurityPlus_StudyApp.iml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SecurityPlus_StudyFile copy.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Security+_StudyApp.py" afterPath="$PROJECT_DIR$/Security+_StudyApp.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SecurityPlus_StudyFile.txt" afterPath="$PROJECT_DIR$/SecurityPlus_StudyFile.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,36 +40,56 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Security+_StudyApp.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Security+_StudyApp.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Security+_StudyApp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="880" column="77" lean-forward="false" selection-start-line="880" selection-start-column="77" selection-end-line="880" selection-end-column="77" />
+            <state relative-caret-position="154">
+              <caret line="49" column="23" lean-forward="true" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
               <folding>
                 <element signature="e#1141#1162#0" expanded="true" />
-                <element signature="e#3969#10800#0" expanded="false" />
-                <element signature="e#15869#16421#0" expanded="false" />
-                <element signature="e#16645#20273#0" expanded="false" />
-                <element signature="e#20551#23240#0" expanded="false" />
-                <element signature="e#23660#24841#0" expanded="false" />
-                <element signature="e#26415#28973#0" expanded="false" />
-                <element signature="e#29222#30949#0" expanded="false" />
-                <element signature="e#31198#39690#0" expanded="false" />
-                <element signature="e#43610#45032#0" expanded="false" />
-                <element signature="e#45142#46613#0" expanded="false" />
-                <element signature="e#46673#46956#0" expanded="false" />
-                <element signature="e#47199#48908#0" expanded="false" />
-                <element signature="e#49142#50649#0" expanded="false" />
-                <element signature="e#50716#52065#0" expanded="false" />
-                <element signature="e#52131#53440#0" expanded="false" />
-                <element signature="e#53510#54851#0" expanded="false" />
-                <element signature="e#54920#56254#0" expanded="false" />
-                <element signature="e#57788#58292#0" expanded="false" />
-                <element signature="e#58365#59516#0" expanded="false" />
-                <element signature="e#66073#82286#0" expanded="false" />
-                <element signature="e#70133#70671#0" expanded="false" />
-                <element signature="e#70840#71160#0" expanded="false" />
-                <element signature="e#82534#85377#0" expanded="false" />
+                <element signature="e#4397#11285#0" expanded="false" />
+                <element signature="e#12366#14653#0" expanded="false" />
+                <element signature="e#15994#16120#0" expanded="false" />
+                <element signature="e#16471#19015#0" expanded="false" />
+                <element signature="e#19292#22920#0" expanded="false" />
+                <element signature="e#23251#26161#0" expanded="false" />
+                <element signature="e#26581#28004#0" expanded="false" />
+                <element signature="e#28255#29215#0" expanded="false" />
+                <element signature="e#29556#31815#0" expanded="false" />
+                <element signature="e#32956#35514#0" expanded="false" />
+                <element signature="e#35763#37490#0" expanded="false" />
+                <element signature="e#37739#49093#0" expanded="false" />
+                <element signature="e#53233#54655#0" expanded="false" />
+                <element signature="e#54765#56236#0" expanded="false" />
+                <element signature="e#56296#56579#0" expanded="false" />
+                <element signature="e#56822#58591#0" expanded="false" />
+                <element signature="e#58843#60355#0" expanded="false" />
+                <element signature="e#60422#61776#0" expanded="false" />
+                <element signature="e#61842#63156#0" expanded="false" />
+                <element signature="e#63226#64572#0" expanded="false" />
+                <element signature="e#64641#65980#0" expanded="false" />
+                <element signature="e#66052#67446#0" expanded="false" />
+                <element signature="e#67519#68023#0" expanded="false" />
+                <element signature="e#68096#69244#0" expanded="false" />
+                <element signature="e#79547#79873#0" expanded="false" />
+                <element signature="e#80187#80271#0" expanded="false" />
+                <element signature="e#80533#81022#0" expanded="false" />
+                <element signature="e#81357#81792#0" expanded="false" />
+                <element signature="e#81999#82319#0" expanded="false" />
+                <element signature="e#82328#82333#0" expanded="false" />
+                <element signature="e#82842#83184#0" expanded="false" />
+                <element signature="e#83263#83599#0" expanded="false" />
+                <element signature="e#83677#84010#0" expanded="false" />
+                <element signature="e#84092#84437#0" expanded="false" />
+                <element signature="e#84518#84861#0" expanded="false" />
+                <element signature="e#84945#85296#0" expanded="false" />
+                <element signature="e#85388#85542#0" expanded="false" />
+                <element signature="e#94068#94401#0" expanded="false" />
+                <element signature="e#94599#94828#0" expanded="false" />
+                <element signature="e#95084#95608#0" expanded="false" />
+                <element signature="e#95740#95954#0" expanded="false" />
+                <element signature="e#96246#96459#0" expanded="false" />
+                <element signature="e#97542#100385#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -87,11 +107,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SecurityPlus_StudyFile.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PopUp_Template.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../Python/CLASSES MAIN/Classes_Advanced/PopUp_Template.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="33">
+              <caret line="187" column="0" lean-forward="false" selection-start-line="187" selection-start-column="0" selection-end-line="191" selection-end-column="21" />
+              <folding>
+                <element signature="e#738#759#0" expanded="true" />
+                <element signature="e#3116#7239#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SecurityPlus_StudyFile.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SecurityPlus_StudyFile.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="62">
-              <caret line="81" column="4" lean-forward="false" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="4" />
+            <state relative-caret-position="408">
+              <caret line="81" column="116" lean-forward="false" selection-start-line="81" selection-start-column="116" selection-end-line="81" selection-end-column="116" />
               <folding />
             </state>
           </provider>
@@ -108,24 +141,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ask_for_Username</find>
-      <find>grid</find>
-      <find>usernameVAR_input</find>
-      <find>sti</find>
-      <find>for</find>
-      <find>addToStudyResovoir</find>
-      <find>print(&quot;\nGlobal File Data[</find>
-      <find>animate</find>
-      <find>rtnList</find>
-      <find>stick</find>
-      <find>width</find>
-      <find>glo_UID_Str</find>
-      <find>Check the y</find>
-      <find>ToTxtFile</find>
-      <find>trueList</find>
-      <find>new pro</find>
-      <find>state_currentPosition</find>
-      <find>$PROJECT_DIR$/../../../Computer</find>
       <find>$USER_HOME$</find>
       <find>Dropbox</find>
       <find>Security+</find>
@@ -138,6 +153,24 @@
       <find>increaseByOneButton</find>
       <find>changeTxtFile</find>
       <find>inputObject</find>
+      <find>wrap</find>
+      <find>delete</find>
+      <find>Text</find>
+      <find>def_input</find>
+      <find>def_textBox</find>
+      <find>**</find>
+      <find>new_inputBox</find>
+      <find>next_StudyObject</find>
+      <find>sticky=&quot;W&quot;</find>
+      <find>strip</find>
+      <find>replace</find>
+      <find>popup</find>
+      <find>text_popupmsg</find>
+      <find>popupmsg</find>
+      <find>addPhoto_popupmsg</find>
+      <find>globalPhoto_Address</find>
+      <find>Tracksta6</find>
+      <find>configure</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -151,16 +184,17 @@
         <option value="$PROJECT_DIR$/autorun.inf" />
         <option value="$PROJECT_DIR$/SecurityPlus_StudyApp.py" />
         <option value="$PROJECT_DIR$/Readme.txt" />
-        <option value="$PROJECT_DIR$/SecurityPlus_StudyFile.txt" />
+        <option value="$PROJECT_DIR$/../../Python/CLASSES MAIN/Classes_Advanced/PopUp_Template.py" />
         <option value="$PROJECT_DIR$/Security+_StudyApp.py" />
+        <option value="$PROJECT_DIR$/SecurityPlus_StudyFile.txt" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="423" />
+    <option name="x" value="439" />
     <option name="y" value="23" />
-    <option name="width" value="977" />
-    <option name="height" value="872" />
+    <option name="width" value="1118" />
+    <option name="height" value="873" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -177,8 +211,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -223,7 +257,58 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Classes_Advanced" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="3Py3_Base_NewPages" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Tkinter3" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Py3_SecurityPlus_StudyApp" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../Tkinter3/3Py3_Base_NewPages.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="4Py3_Base_PageStyling" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Tkinter3" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Py3_SecurityPlus_StudyApp" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../Tkinter3/4Py3_Base_PageStyling.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="5Py3_Base_MatPlotLib" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Tkinter3" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Py3_SecurityPlus_StudyApp" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../Tkinter3/5Py3_Base_MatPlotLib.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="PopUp_Template" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -235,24 +320,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Py3_SecurityPlus_StudyApp" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../Python/CLASSES MAIN/Classes_Advanced/Classes_Advanced.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Py_KeyLogger" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Py3_SecurityPlus_StudyApp" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Py_KeyLogger" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../Python/CLASSES MAIN/Classes_Advanced/PopUp_Template.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -391,16 +459,20 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="3">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.Security+_StudyApp" />
-      <item index="1" class="java.lang.String" itemvalue="Python.Classes_Advanced" />
-      <item index="2" class="java.lang.String" itemvalue="Python.Py_KeyLogger" />
+      <item index="1" class="java.lang.String" itemvalue="Python.3Py3_Base_NewPages" />
+      <item index="2" class="java.lang.String" itemvalue="Python.4Py3_Base_PageStyling" />
+      <item index="3" class="java.lang.String" itemvalue="Python.5Py3_Base_MatPlotLib" />
+      <item index="4" class="java.lang.String" itemvalue="Python.PopUp_Template" />
     </list>
     <recent_temporary>
-      <list size="3">
+      <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.Security+_StudyApp" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Py_KeyLogger" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Classes_Advanced" />
+        <item index="1" class="java.lang.String" itemvalue="Python.PopUp_Template" />
+        <item index="2" class="java.lang.String" itemvalue="Python.5Py3_Base_MatPlotLib" />
+        <item index="3" class="java.lang.String" itemvalue="Python.4Py3_Base_PageStyling" />
+        <item index="4" class="java.lang.String" itemvalue="Python.3Py3_Base_NewPages" />
       </list>
     </recent_temporary>
   </component>
@@ -430,15 +502,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="423" y="23" width="977" height="872" extended-state="1" />
+    <frame x="439" y="23" width="1118" height="873" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07845188" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.06836828" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947975" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32803467" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32803467" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26392573" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26357615" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27966103" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -476,39 +548,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="26" />
+      <option name="time" value="31" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Py_KeyLogger">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="18" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/setup.py" />
-    <entry file="file://$PROJECT_DIR$/autorun.inf" />
-    <entry file="file://$PROJECT_DIR$/../../Python/CLASSES MAIN/Classes_Advanced/Classes_Advanced.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="12" column="15" lean-forward="false" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-          <folding>
-            <element signature="e#524#3354#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SecurityPlus_StudyFile.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="3" lean-forward="false" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Security+_StudyApp.py" />
     <entry file="file://$PROJECT_DIR$/Py_KeyLogger">
       <provider selected="true" editor-type-id="text-editor">
@@ -693,13 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Python/CalculatorFunction/Calculator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-47">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/urllib/request.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6540">
@@ -735,13 +772,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Vault_Tkinter/NCT_TkinterVault.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4845">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/autorun.inf" />
     <entry file="file://$PROJECT_DIR$/setup.py" />
     <entry file="file://$PROJECT_DIR$/SecurityPlus_StudyApp copy.py" />
@@ -762,6 +792,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../Python/CalculatorFunction/Calculator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Python/pygLatin/pygLatin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Vault_Tkinter/NCT_TkinterVault.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1157">
+          <caret line="421" column="49" lean-forward="true" selection-start-line="421" selection-start-column="49" selection-end-line="421" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Tkinter3/3Py3_Base_NewPages.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Tkinter3/4Py3_Base_PageStyling.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Tkinter3/5Py3_Base_MatPlotLib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-840">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../../Python/CLASSES MAIN/Classes_Advanced/Classes_Advanced.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -772,44 +844,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SecurityPlus_StudyFile.txt">
+    <entry file="file://$PROJECT_DIR$/../../Python/CLASSES MAIN/Classes_Advanced/PopUp_Template.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="81" column="4" lean-forward="false" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="4" />
-          <folding />
+        <state relative-caret-position="33">
+          <caret line="187" column="0" lean-forward="false" selection-start-line="187" selection-start-column="0" selection-end-line="191" selection-end-column="21" />
+          <folding>
+            <element signature="e#738#759#0" expanded="true" />
+            <element signature="e#3116#7239#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Security+_StudyApp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="880" column="77" lean-forward="false" selection-start-line="880" selection-start-column="77" selection-end-line="880" selection-end-column="77" />
+        <state relative-caret-position="154">
+          <caret line="49" column="23" lean-forward="true" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
           <folding>
             <element signature="e#1141#1162#0" expanded="true" />
-            <element signature="e#3969#10800#0" expanded="false" />
-            <element signature="e#15869#16421#0" expanded="false" />
-            <element signature="e#16645#20273#0" expanded="false" />
-            <element signature="e#20551#23240#0" expanded="false" />
-            <element signature="e#23660#24841#0" expanded="false" />
-            <element signature="e#26415#28973#0" expanded="false" />
-            <element signature="e#29222#30949#0" expanded="false" />
-            <element signature="e#31198#39690#0" expanded="false" />
-            <element signature="e#43610#45032#0" expanded="false" />
-            <element signature="e#45142#46613#0" expanded="false" />
-            <element signature="e#46673#46956#0" expanded="false" />
-            <element signature="e#47199#48908#0" expanded="false" />
-            <element signature="e#49142#50649#0" expanded="false" />
-            <element signature="e#50716#52065#0" expanded="false" />
-            <element signature="e#52131#53440#0" expanded="false" />
-            <element signature="e#53510#54851#0" expanded="false" />
-            <element signature="e#54920#56254#0" expanded="false" />
-            <element signature="e#57788#58292#0" expanded="false" />
-            <element signature="e#58365#59516#0" expanded="false" />
-            <element signature="e#66073#82286#0" expanded="false" />
-            <element signature="e#70133#70671#0" expanded="false" />
-            <element signature="e#70840#71160#0" expanded="false" />
-            <element signature="e#82534#85377#0" expanded="false" />
+            <element signature="e#4397#11285#0" expanded="false" />
+            <element signature="e#12366#14653#0" expanded="false" />
+            <element signature="e#15994#16120#0" expanded="false" />
+            <element signature="e#16471#19015#0" expanded="false" />
+            <element signature="e#19292#22920#0" expanded="false" />
+            <element signature="e#23251#26161#0" expanded="false" />
+            <element signature="e#26581#28004#0" expanded="false" />
+            <element signature="e#28255#29215#0" expanded="false" />
+            <element signature="e#29556#31815#0" expanded="false" />
+            <element signature="e#32956#35514#0" expanded="false" />
+            <element signature="e#35763#37490#0" expanded="false" />
+            <element signature="e#37739#49093#0" expanded="false" />
+            <element signature="e#53233#54655#0" expanded="false" />
+            <element signature="e#54765#56236#0" expanded="false" />
+            <element signature="e#56296#56579#0" expanded="false" />
+            <element signature="e#56822#58591#0" expanded="false" />
+            <element signature="e#58843#60355#0" expanded="false" />
+            <element signature="e#60422#61776#0" expanded="false" />
+            <element signature="e#61842#63156#0" expanded="false" />
+            <element signature="e#63226#64572#0" expanded="false" />
+            <element signature="e#64641#65980#0" expanded="false" />
+            <element signature="e#66052#67446#0" expanded="false" />
+            <element signature="e#67519#68023#0" expanded="false" />
+            <element signature="e#68096#69244#0" expanded="false" />
+            <element signature="e#79547#79873#0" expanded="false" />
+            <element signature="e#80187#80271#0" expanded="false" />
+            <element signature="e#80533#81022#0" expanded="false" />
+            <element signature="e#81357#81792#0" expanded="false" />
+            <element signature="e#81999#82319#0" expanded="false" />
+            <element signature="e#82328#82333#0" expanded="false" />
+            <element signature="e#82842#83184#0" expanded="false" />
+            <element signature="e#83263#83599#0" expanded="false" />
+            <element signature="e#83677#84010#0" expanded="false" />
+            <element signature="e#84092#84437#0" expanded="false" />
+            <element signature="e#84518#84861#0" expanded="false" />
+            <element signature="e#84945#85296#0" expanded="false" />
+            <element signature="e#85388#85542#0" expanded="false" />
+            <element signature="e#94068#94401#0" expanded="false" />
+            <element signature="e#94599#94828#0" expanded="false" />
+            <element signature="e#95084#95608#0" expanded="false" />
+            <element signature="e#95740#95954#0" expanded="false" />
+            <element signature="e#96246#96459#0" expanded="false" />
+            <element signature="e#97542#100385#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SecurityPlus_StudyFile.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="81" column="116" lean-forward="false" selection-start-line="81" selection-start-column="116" selection-end-line="81" selection-end-column="116" />
+          <folding />
         </state>
       </provider>
     </entry>

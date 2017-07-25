@@ -1,114 +1,83 @@
 Acronym:     -
-Title:           Domain Name System
-Port:           -
-Protocol:      -
-TCP/UDP:     -
-Definition:           The internets system is going to change
-###
-Acronym:     -
 Title:           Routers
 Port:           -
 Protocol:      -
 TCP/UDP:     -
-Definition:               
-b.	If you hear Layer 2 = Switch    
-c.	If you hear Layer 3 = Router    
-d.	Routers can connect diverse network types: LAN, WAN, Copper, Fiber.    
-e.	If you see a 90-Degree symbol, it is likely referring to the router.    
-f.	Routers do not make a good firewall.
+Definition:               b.	If you hear Layer 2 = Switch
+    c.	If you hear Layer 3 = Router
+    d.	Routers can connect diverse network types: LAN, WAN, Copper, Fiber.
+    e.	If you see a 90-Degree symbol, it is likely referring to the router.
+    f.	Routers do not make a good firewall.
 ###
 Acronym:     -
 Title:           Firewalls
 Port:           -
-Protocol:      -
+Protocol:      No Pro
 TCP/UDP:     -
-Definition:
-1.	Firewall _ Layer 4 TCPUDP
-a.	Technically it can be the layer 3 router acting as the firewall.
-b.	Some do filter through layer 7.
-c.	Usually sits on the ingress/egress of the network.
-d.	Can encrypt traffic into/out of the network, to protect traffic between sites.
-e.	Firewall can act as a proxy. Traditional method to separate internal networks from                  internet. Talking to the proxy, instead of the internet. The proxy takes your request and send to the internet.
+Definition:           1.	Firewall _ Layer 4 TCPUDP
+    a.	Technically it can be the layer 3 router acting as the firewall.
+    b.	Some do filter through layer 7.
+    c.	Usually sits on the ingress/egress of the network.
+    d.	Can encrypt traffic into/out of the network, to protect traffic between sites.
+    e.	Firewall can act as a proxy. Traditional method to separate internal networks from internet. Talking to the proxy, instead of the internet. The proxy takes your request and sends to the internet.
 ###
 Acronym:     -
 Title:           Load Balancers
 Port:           -
 Protocol:      -
 TCP/UDP:     -
-Definition:
-a.	Distribute traffic from the internet to a cluster of private servers. When I contact Google, they have many servers across the world that I may be interacting with.
-b.	Servers may be distributed based on what they have to offer, pictures, videos, maps, regions. The load balancer needs to be able to distribute based on the content, and/or the load.
-c.	The servers may have all the same stuff, but if you send too many users to one, it can be overused.d.	All servers need to have the proper security updates.
-###
-Acronym:     -
-Title:           Load Balancer
-Port:           212
-Protocol:      -
-TCP_UDP:     -
-Definition:
+Definition:           
 a.	Distribute traffic from the internet to a cluster of private servers. When I contact Google, they have many servers across the world that I may be interacting with.
 b.	Servers may be distributed based on what they have to offer, pictures, videos, maps, regions. The load balancer needs to be able to distribute based on the content, and/or the load.
 c.	The servers may have all the same stuff, but if you send too many users to one, it can be overused.
 d.	All servers need to have the proper security updates.
 ###
-Acronym:     NCT
-Title:           NATE
-Port:           Terry
-Protocol:      -
-TCP/UDP:     -
-Definition:           HERE WE are again 
- Does this change things
-###
-Acronym:     AKA
-Title:           Ashley Kayla Adam
+Acronym:     UTM
+Title:           Unified Threat Management
 Port:           -
 Protocol:      -
-TCP/UDP:     -
-Definition:           I like Curly hair
-What will happen on the third one? 
-Push us here
-###
-Acronym:     ZAC
-Title:           Zachary
-Port:           Alexander
-Protocol:      31
 TCP/UDP:     -
 Definition:           
-Zach
-Alexander
-Carey
-Brother
-to
-Mark
+a.	AKA - Web Security Gateway  This is an all-in-one security appliance.
+b.	Will have:
+    i.	URL Filter _ Site content inspection. Is this porn?
+    ii.	Malware Inspection
+    iii.	Spam Filter
+    iv.	CSU/DSU
+    v.	Router/Switch Attached
+    vi.	Firewall Attached
+    vii.	IDS/IPS
+    viii.	Bandwidth Shaper _ Limit people in your network who are watching YouTube videos.
 ###
-Acronym:     DDR
-Title:           Dance
-Port:           David
-Protocol:      Revolution
-TCP/UDP:     -
-Definition:           ---Derek David Rouch
----Derek David Rouch
----Derek David Rouch
----Derek David Rouch
----
-###
-Acronym:     Benjamin
-Title:           BRT
+Acronym:     NIPS  ||  NIDS
+Title:           Network Intrusion Prevension  ||  Detection
 Port:           -
 Protocol:      -
 TCP/UDP:     -
-Definition:           Ben
----Ben   Ben 
---- Ben
+Definition:           
+a.	System built to watch the traffic and check for vulnerabilities/threats.
+b.	Check for:
+    i.	Buffer overflows
+    ii.	Cross Site Scripting
+    iii.	etc
+c.	Detection vs Prevention
+    i.	Detection > alarm or alert
+    ii.	Prevention > Stop it before it gets into the network.
+1.	If you are preventing, you need to make sure that you are not also preventing legitimate traffic.
 ###
-Acronym:     Ken
-Title:           KAT
+Acronym:     -
+Title:           Identification Technologies
 Port:           -
 Protocol:      -
 TCP/UDP:     -
-Definition:           Ken
----Ken
----Ken
----Ken
----Ken
+Definition:           
+a.	Signature Based Match _ does this code coming over the network match known malware. The photo below shows a known signature of a malware worm. Regardless of the situation, if this hexadecimal signature is detected anywhere, we know what it is and to prevent it.
+b.	Anomaly Based Detection
+    i.	We build a baseline on what we think is normal in all situations. Do we have bandwidth spikes? Do we have too many people trying to log on?
+c.	Behavior Based
+    i.	Does a specific individual log on and try to access something that they do not normally access?
+d.	Heuristics
+    i.	Use Artificial intelligence to identify.
+    ii.	See a type of traffic flow come into the network, and see if it changes. Does this traffic contain good or bad packets? AI can keep learning.
+A signature match is black and white, while Heuristics is ever changing and adapting to new situations and new users
 ###
