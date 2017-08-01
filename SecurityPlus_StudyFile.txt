@@ -1,9 +1,12 @@
 Acronym:     -
 Title:           Routers
 Port:           -
+
 Protocol:      -
 TCP/UDP:     -
-Definition:               b.	If you hear Layer 2 = Switch
+Definition:
+1) Routers - Layer 2
+    b.	If you hear Layer 2 = Switch
     c.	If you hear Layer 3 = Router
     d.	Routers can connect diverse network types: LAN, WAN, Copper, Fiber.
     e.	If you see a 90-Degree symbol, it is likely referring to the router.
@@ -14,7 +17,8 @@ Title:           Firewalls
 Port:           -
 Protocol:      No Pro
 TCP/UDP:     -
-Definition:           1.	Firewall _ Layer 4 TCPUDP
+Definition:
+1.	Firewall _ Layer 4 TCPUDP
     a.	Technically it can be the layer 3 router acting as the firewall.
     b.	Some do filter through layer 7.
     c.	Usually sits on the ingress/egress of the network.
@@ -24,13 +28,15 @@ Definition:           1.	Firewall _ Layer 4 TCPUDP
 Acronym:     -
 Title:           Load Balancers
 Port:           -
+
 Protocol:      -
 TCP/UDP:     -
 Definition:           
-a.	Distribute traffic from the internet to a cluster of private servers. When I contact Google, they have many servers across the world that I may be interacting with.
-b.	Servers may be distributed based on what they have to offer, pictures, videos, maps, regions. The load balancer needs to be able to distribute based on the content, and/or the load.
-c.	The servers may have all the same stuff, but if you send too many users to one, it can be overused.
-d.	All servers need to have the proper security updates.
+a. Distribute traffic from the internet to a cluster of private servers. When I contact Google, they have many servers across the world that I may be interacting with.
+b. Servers may be distributed based on what they have to offer, pictures, videos, maps, regions. The load balancer needs to be able to distribute based on the content, and/or the load.
+c. The servers may have all the same stuff, but if you send too many users to one, it can be overused.
+d. All servers need to have the proper security updates.
+
 ###
 Acronym:     UTM
 Title:           Unified Threat Management
@@ -64,6 +70,7 @@ c.	Detection vs Prevention
     i.	Detection > alarm or alert
     ii.	Prevention > Stop it before it gets into the network.
 1.	If you are preventing, you need to make sure that you are not also preventing legitimate traffic.
+
 ###
 Acronym:     -
 Title:           Identification Technologies
@@ -71,13 +78,531 @@ Port:           -
 Protocol:      -
 TCP/UDP:     -
 Definition:           
-a.	Signature Based Match _ does this code coming over the network match known malware. The photo below shows a known signature of a malware worm. Regardless of the situation, if this hexadecimal signature is detected anywhere, we know what it is and to prevent it.
-b.	Anomaly Based Detection
-    i.	We build a baseline on what we think is normal in all situations. Do we have bandwidth spikes? Do we have too many people trying to log on?
-c.	Behavior Based
-    i.	Does a specific individual log on and try to access something that they do not normally access?
-d.	Heuristics
-    i.	Use Artificial intelligence to identify.
-    ii.	See a type of traffic flow come into the network, and see if it changes. Does this traffic contain good or bad packets? AI can keep learning.
+a. Signature Based Match _ does this code coming over the network match known malware. The photo below shows a known
+signature of a malware worm. Regardless of the situation, if this hexadecimal signature is detected anywhere, we know what it is and to prevent it.
+b. Anomaly Based Detection
+    i. We build a baseline on what we think is normal in all situations. Do we have bandwidth spikes? Do we have too many people trying to log on?
+c. Behavior Based
+    i. Does a specific individual log on and try to access something that they do not normally access?
+d. Heuristics
+    i. Use Artificial intelligence to identify.
+    ii. See a type of traffic flow come into the network, and see if it changes. Does this traffic contain good or bad packets? AI can keep learning.
 A signature match is black and white, while Heuristics is ever changing and adapting to new situations and new users
+###
+Acronym:     -
+Title:           Protocol Analyzer
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+a.	Sniffer _ capture packets from the network to analyze and identify. Note 'Sniffer_ is technically a registered trademark.
+b.	There are many ways to capture and analyze packets to be shown in plain English
+c.	Wireshark
+###
+Acronym:     -
+Title:           Spam Filter
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+a. Focused on stopping unsolicited email.
+b. Stop it at the gateway before it reaches the user.
+c. Can be on-site.
+d. Can be cloud-based. Will be filtered before being sent to your relay.
+e. How to identify:
+    i. Whitelist: Only receive mail from those on the list.
+    ii. SMTP _ Simple Mail Transfer Protocol
+        1. Block anything that doesnt follow RFC standards
+        2. Spammer often doesnt follow standards.
+    iii. rDNS _ Reverse DNS
+        1. Block email if the senders domain does not match the IP address
+        2. If sender is from the US but the IP comes from outside US
+    iv. Tarpitting _ Intentionally slows down the server conversation.
+        1. Spammers try to send as many emails as possible in as short as time as possible.
+        2. We can slow down the conversation. The spammer expects your machine to respond in some way in just a few milliseconds. If you auto delay your machines response_ the spammer may automatically skip your IP since it doesnt appear to be valid.
+    v. Recipient Filtering
+        1. Block all email not addressed to a valid recipient.
+###
+Acronym:     WAF
+Title:           Web Application Firewall
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+a. Looks at web conversations, and determines if the packets/information is legitimate. Is that really a zip-code, or serial number that is being put into the application.
+b. If the app requires a user to enter a serial number to access something, a hacker can just enter a random number to try and get in the front door. First step is to make sure that the number is an actual serial number.
+c. If not protected, invalid data can at times allow access behind the scenes.
+d. This can allow a SQL injection, if the app wasnt written well and allow behind the scenes access. Even if the app is poorly written, the WAF can still block access.
+e. PCI DSS _ Payment Card Industry, Data Security Standard
+    i. Payments with credit cards. You don_t want people to have access to credit cards.
+    ii. This have standards that are required if your company stores credit cards.
+###
+Acronym:     -
+Title:           OSI Applicaiton Layer
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+a. OSI Application Layer _ examine every bit of data that moves through the network.
+    i. Analyze protocols and how the applications are being used and communicating between devices.
+    ii. Other Names:
+        1. Application Layer Gateway
+        2. Stateful Multilayer Inspection
+        3. Deep Packet Inspection
+b. Requires Advanced Decodes _ it is a very advanced piece of technology.
+    i. Every packet must be analyzed, categorized, and a security decision is determined.
+c. Network Based Firewalls
+    i. Control traffic flows based on the application. You can allow what applications can be used. Ex. Twitter, Microsoft SQL server, YouTube.
+d. Intrusion Prevention Systems
+    i. Identify an application
+    ii. Apply application specific vulnerability signatures to the traffic.
+    iii. Prevent attackers from taking advantage of something in a server or an application, that is allowed in the
+    network.
+e. Host Based Firewalls
+    i. Work with the OS to determine the application.
+    ii. Knows what applications are on and are allowed on the network or device.
+    iii. It will also know who else should have access.
+###
+Acronym:     -
+Title:           Firewall Rules
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+a. Rules for how devices operate, who has access, who can make changes. etc.
+b. If someone asks for, or is hired, how do you provide them with access.
+c. Specific rules and requirements for:
+    i. Financial info , medical info,  etc.
+d. Included are packet filtering rules, email filtering rules.
+e. Technical rules often follow the procedural rules. Step by  step procedure is created based on external requirements for your activities such as hiring and granting new access.
+f. Allow or disallow traffic based on tuples.
+    i. Groupings or categories. If you match these, then you are allowed/disallowed access or communication.
+        1. Based on IP address, port number, time of day, etc.
+g. Logical Path
+    i. Rule Base > start at top of path list and follow to the bottom.
+h. Rules can be very general or very specific.
+	i. All people on network have full access to the internet.
+	i. People in the marketing dept. only have access to specific pages.
+i. Implicit Deny
+	i. If it goes through the list of rules, the no rules are met by traffic, the firewall will automatically deny, and/or automatically log traffic.
+	ii. Most firewalls are built with an implicit deny.
+j. Rule 1(picture) > any user, from any remote ip address that is trying to connect to port22 on this network while following the TCP protocol will be allowed. Anybody is allowed to ssh this firewall.
+k. Rule 2(picture) > Same as rule 1 but to port 80 which is http (web service)
+l. Rule 3(picture) > Same as rule 1 but to port 443 which is https
+Rule 4(picture) > 8443 is management to web server. Would be better to be denied
+###
+Acronym:     TCP
+Title:           Transmission Control Protocol
+Port:           1
+
+Protocol:      TCP is a protocol.
+TCP/UDP:     -
+Definition:           
+TCP is one of the main protocols in TCP/IP networks. Whereas the IP protocol deals only with packets, TCP enables two hosts to establish a connection and exchange streams of data. TCP guarantees delivery of data and also guarantees that packets will be delivered in the same order in which they were sent.
+###
+Acronym:     ECHO
+Title:           -
+Port:           7
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+
+###
+Acronym:     FTP - Data
+Title:           File Transfer Protocol - Data
+Port:           20
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+	File Transfer Protocol (FTP) is the commonly used protocol for exchanging files over the Internet. FTP uses the Internet's TCP/IP protocols to enable data transfer. FTP uses a client-server architecture, often secured with SSL/TLS. FTP promotes sharing of files via remote computers with reliable and efficient data transfer.
+	How FTP Works - FTP works in the same way as HTTP for transferring Web pages from a server to a user's browser and SMTP for transferring electronic mail across the Internet in that, like these technologies. FTP uses a client-server architecture. Users provide authentication using a sign-in protocol, usually a username and password, however some FTP servers may be configured to accept anonymous FTP logins where you don't need to identify yourself before accessing files. Most often, FTP is secured with SSL/TLS.
+	How to FTP - Files can be transferred between two computers using FTP software. The user's computer is called the local host machine and is connected to the Internet. The second machine, called the remote host, is also running FTP software and connected to the Internet
+***The local host machine connects to the remote host's IP address.
+***The user would enter a username/password (or use anonymous).
+***FTP software may have a GUI, allowing users to drag and drop files between the remote and local host. If not, a series of FTP commands are used to log in to the remote host and transfer files between the machines.
+	Common Uses of FTP - FTP is most commonly used to download a file from a server using the Internet or to upload a file to a server (e.g., uploading a web page file to a Web server).
+###
+Acronym:     FTP - Control
+Title:           File Transfer Protocol - Control
+Port:           21
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+
+###
+Acronym:     SSH
+Title:           Secure Shell
+Port:           22
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+	Developed by SSH Communications Security Ltd., Secure Shell is a program to log into another computer over a network, to execute commands in a remote machine, and to move files from one machine to another. It provides strong authenticationand secure communications over insecure channels. It is a replacement for rlogin, rsh, rcp, and rdist.
+	SSH protects a network from attacks such as IP spoofing, IP source routing, and DNS spoofing. An attacker who has managed to take over a network can only force ssh to disconnect. He or she cannot play back the traffic or hijack the connection when encryption is enabled.
+	When using ssh's slogin (instead of rlogin) the entire login session, including transmission of password, is encrypted; therefore it is almost impossible for an outsider to collect passwords.
+	SSH is available for Windows, Unix, Macintosh, and OS/2, and it also works with RSAauthentication.
+###
+Acronym:     Telnet
+Title:           Terminal Emulation for TCP/IP Networks
+Port:           23
+Protocol:      Bi-directional, 8-bit byte communications to allow interfacing terminal devices and processes. 
+
+TCP/UDP:     TCP/IP
+Definition:           
+Telnet is a terminal emulation program for TCP/IP networks such as the Internet. The Telnet program runs on your computer and connects your PC to a server on the network. You can then enter commands through the Telnet program and they will be executed as if you were entering them directly on the server console. This enables you to control the server and communicate with other servers on the network. To start a Telnet session, you must log in to a server by entering a valid username and password. Telnet is a common way to remotely control Web servers.
+	The Telnet protocol is designed to provide a bi-directional, eight-bit byte oriented communications facility to allow for a a standard method of interfacing terminal devices and processes. Additional information on the Telnet protocol specification can be found 
+https://tools.ietf.org/html/rfc854.
+###
+Acronym:     SMTP
+Title:           Simple Mail Transfer Protocol
+Port:           25
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+	Simple Mail Transfer Protocol, a protocol for sending e-mail messages between servers. Most e-mail systems that send mail over the Internet use SMTP to send messages from one server to another; the messages can then be retrieved with an e-mail client using either POP or IMAP. In addition, SMTP is generally used to send messages from a mail client to a mail server. This is why you need to specify both the POP or IMAP server and the SMTP server when you configure your e-mail application.
+###
+Acronym:     Time
+Title:           Time
+Port:           37
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+
+###
+Acronym:     Host Name Server (Nameserv)
+Title:           Host Name Server (Nameserv)
+Port:           42
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+
+###
+Acronym:     WhoIs
+Title:           WhoIs
+Port:           43
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+
+###
+Acronym:     Login Host Protocol (Login)
+Title:           Login Host Protocol (Login)
+Port:           49
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+
+###
+Acronym:     DNS
+Title:           Domain Name System
+Port:           53
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+	An Internet service that translates domain names into IP addresses. Because domain names are alphabetic, they're easier to remember. The Internet however, is really based on IP addresses. Every time you use a domain name, therefore, a DNS service must translate the name into the corresponding IP address. For example, the domain name www.example.com might translate to 198.105.232.4.
+	
+The DNS system is, in fact, its own network. If one DNS server doesn't know how to translate a particular domain name, it asks another one, and so on, until the correct IP address is returned.
+	
+(2) Short for digital nervous system,a term coined by Bill Gates to describe a network of personal computers that make it easier to obtain and understand information.
+###
+Acronym:     TFTP
+Title:           Trivial File Transfer Protocol
+Port:           69
+Protocol:      Trivial File Transfer Protocol
+TCP/UDP:     UDP
+Definition:           
+Trivial File Transfer Protocol, a simple form of the File Transfer Protocol (FTP). TFTP uses the User Datagram Protocol (UDP)and provides no security features. It is often used by servers to bootdiskless workstations, X-terminals, and routers.
+###
+Acronym:     Gopher
+Title:           Gopher Services
+Port:           70
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+A system that pre-dates the World Wide Web for organizing and displaying files on Internet servers. A Gopher server presents its contents as a hierarchically structured list of files. With the ascendance of the Web, many gopher databases were converted to Web sites which can be more easily accessed via Web search engines.
+
+Gopher was developed at the University of Minnesota and named after the school's mascot. Two systems, Veronica and Jughead, let you search global indices of resources stored in Gopher systems.
+###
+Acronym:     Finger
+Title:           Finger
+Port:           79
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+A UNIX program that takes an e-mail address as input and returns information about the user who owns that e-mail address. On some systems, finger only reports whether the user is currently logged on. Other systems return additional information, such as the user's full name, address, and telephone number. Of course, the user must first enter this information into the system. Many e-mail programs now have a finger utility built into them.
+###
+Acronym:     HTTP
+Title:           HyperText Transfer Protocol
+Port:           80
+Protocol:      -
+TCP/UDP:     HTTP is a protocol
+Definition:           
+HTTP is the underlying protocol used by the World Wide Web and this protocol defines how messages are formatted and transmitted, and what actions Web servers and browsers should take in response to various commands.
+	For example, when you enter a URL in your browser, this actually sends an HTTP command to the Web server directing it to fetch and transmit the requested Web page. The other main standard that controls how the World Wide Web works is HTML, which covers how Web pages are formatted and displayed.
+	HTTP is called a stateless protocol because each command is executed independently, without any knowledge of the commands that came before it. This is the main reason that it is difficult to implement Web sites that react intelligently to user input. This shortcoming of HTTP is being addressed in a number of new technologies, including ActiveX, Java, JavaScript and cookies.
+	Errors on the Internet can be quite frustrating - especially if you do not know the difference between a 404 error and a 502 error. These error messages, also called HTTP status codes are response codes given by Web servers and help identify the cause of the problem.
+For example, "404 File Not Found" is a common HTTP status code. It means the Web server cannot find the file you requested. This means the webpage or other document you tried to load in your Web browser has either been moved or deleted, or you entered the wrong URL or document name.
+	Knowing the meaning of the HTTP status code can help you figure out what went wrong. On a 404 error, for example, you could look at the URL to see if a word looks misspelled, then correct it and try it again. If that doesn't work, backtrack by deleting information between each backslash, until you come to a page on that site that isn't a 404. From there you may be able to find the page you're looking for.
+	Many websites create custom 404 error pages that will help users locate a valid page or document within the website. For example, if you land on a 404 File Not Found page via Webopedia.com, a custom error page will load providing quick links to on-site navigation and site search features to help you find what you were looking for.
+	What about HTTPS? - A similar abbreviation, HTTPS means Hyper Text Transfer Protocol Secure. Basically, it is the secure version of HTTP. Communications between the browser and website are encrypted by Transport Layer Security (TLS), or its predecessor, Secure Sockets Layer (SSL).
+
+###
+Acronym:     X.400
+Title:           X.400 Standard
+Port:           103
+Protocol:      -
+TCP/UDP:     -
+Definition:           An ISO and ITU standard for addressing and transporting e-mail messages. It conforms to layer 7 of the OSI model and supports several types of transport mechanisms, including Ethernet, X.25, TCP/IP, and dial-up lines.
+###
+Acronym:     SNA Gateway Access Server
+Title:           SNA Gateway Access Server
+Port:           108
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+
+###
+Acronym:     POP2
+Title:           Post Office Protocol 2 (discontinued)
+Port:           109
+Protocol:      -
+TCP/UDP:     -
+Definition:           POP2 is a discontinued programming language developed around 1970 from the earlier language POP-1 (developed by Robin Popplestone in 1968, originally named COWSEL) by Robin Popplestone and Rod Burstall at the University of Edinburgh. It drew roots from many sources: the languages LISP and ALGOL 60, and theoretical ideas from Peter J. Landin. It used an incremental compiler, which gave it some of the flexibility of an interpreted language, including allowing new function definitions at run time and modification of function definitions while a program was running (both of which are features of dynamic compilation), without the overhead of an interpreted language.
+
+###
+Acronym:     POP3
+Title:           Post Office Protocol 3
+Port:           110
+Protocol:      -
+TCP/UDP:     -
+Definition:           POP is short for Post Office Protocol, a protocol used to retrieve e-mail from a mail server. Most e-mail applications (sometimes called an e-mail client) use the POP protocol, although some can use the newer IMAP (Internet Message Access Protocol).
+There are two versions of POP. The first, called POP2, became a standard in the mid-80's and requires SMTP to send messages. The newer version, POP3, can be used with or without SMTP.
+
+###
+Acronym:     SFTP
+Title:           Simple File Transfer Protocol
+Port:           115
+Protocol:      -
+TCP/UDP:     -
+Definition:           	FTP, or "File Transfer Protocol" is a popular method of transferring files between two remote systems.
+	SFTP, which stands for SSH File Transfer Protocol, or Secure File Transfer Protocol, is a separate protocol packaged with SSH that works in a similar way over a secure connection. The advantage is the ability to leverage a secure connection to transfer files and traverse the filesystem on both the local and remote system.
+
+    In almost all cases, SFTP is preferable to FTP because of its underlying security features and ability to piggy-back on an SSH connection. FTP is an insecure protocol that should only be used in limited cases or on networks you trust.
+###
+Acronym:     SQL Services
+Title:           SQL Services
+Port:           118
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+
+###
+Acronym:     NNTP
+Title:           NewsGroup
+Port:           119
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+
+###
+Acronym:     NetBIOS NS
+Title:           NetBIOS Name Service
+Port:           137
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+
+###
+Acronym:     NetBIOS DS
+Title:           NetBIOS Datagram Service
+Port:           139
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+
+###
+Acronym:     IMAP
+Title:           Interim Mail Access Protocol
+Port:           143
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+
+###
+Acronym:     NetBIOS SS
+Title:           NetBIOS Session Service
+Port:           150
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+
+###
+Acronym:     SQL Server
+Title:           SQL Server
+Port:           156
+Protocol:      -
+TCP/UDP:     -
+Definition:           Generically, any database management system (DBMS) that can respond to queries from client machines formatted in the SQL language. When capitalized, the term generally refers to either of two database management products from Sybase and Microsoft. Both companies offer client-server DBMS products called SQL Server.
+
+
+###
+Acronym:     SNMP
+Title:           Simple Network Management Protocol
+Port:           161
+Protocol:      -
+TCP/UDP:     -
+Definition:           Short for Simple Network Management Protocol, a set of protocols for managing complex networks. The first versions of SNMP were developed in the early 80s. SNMP works by sending messages, called protocol data units (PDUs), to different parts of a network. SNMP-compliant devices, called agents, store data about themselves in Management Information Bases (MIBs)and return this data to the SNMP requesters.
+
+###
+Acronym:     BGP
+Title:           Border Gateway Protocol
+Port:           179
+Protocol:      -
+TCP/UDP:     -
+Definition:           Short for Border Gateway Protocol, an exterior gateway routing protocol that enables groups of routers (called autonomous systems) to share routing information so that efficient, loop-free routes can be established. BGP is commonly used within and between Internet Service Providers (ISPs). The protocol is defined in RFC 1771.
+
+###
+Acronym:     GACP
+Title:           Gateway Access Control Protocol
+Port:           190
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+
+###
+Acronym:     IRC
+Title:           Internet Relay Chat
+Port:           194
+Protocol:      -
+TCP/UDP:     -
+Definition:           	Internet Relay Chat, a chat system developed by Jarkko Oikarinen in Finland in the late 1980s. IRC has become very popular as more people get connected to the Internet because it enables people connected anywhere on the Internet to join in live discussions. Unlike older chat systems, IRC is not limited to just two participants.
+	To join an IRC discussion, you need an IRC client and Internet access. The IRC client is a program that runs on your computer and sends and receives messages to and from an IRC server. The IRC server, in turn, is responsible for making sure that all messages are broadcast to everyone participating in a discussion. There can be many discussions going on at once; each one is assigned a unique channel.
+
+###
+Acronym:     DLS
+Title:           Directory Location Service
+Port:           197
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+
+###
+Acronym:     LDAP
+Title:           Lightweight Directory Access Protocol
+Port:           389
+Protocol:      -
+TCP/UDP:     -
+Definition:           	Lightweight Directory Access Protocol, a set of protocols for accessing information directories. LDAP is based on the standards contained within the X.500 standard, but is significantly simpler. And unlike X.500, LDAP supports TCP/IP, which is necessary for any type of Internet access. Because it's a simpler version of X.500, LDAP is sometimes called X.500-lite.
+
+	Although not yet widely implemented, LDAP should eventually make it possible for almost any application running on virtually any computer platform to obtain directory information, such as email addresses and public keys. Because LDAP is an open protocol, applications need not worry about the type of server hosting the directory.
+
+###
+Acronym:     Novel Netware over IP
+Title:           Novel Netware over IP
+Port:           396
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+
+###
+Acronym:     HTTPS
+Title:           (Secure) HyperText Transfer Protocol
+Port:           443
+Protocol:      -
+TCP/UDP:     -
+Definition:           Secure HTTP (S-HTTP)
+	Another protocol for transmitting data securely over the World Wide Web is Secure HTTP (S-HTTP). Whereas SSL creates a secure connection between a client and a server, over which any amount of data can be sent securely, S-HTTP is designed to transmit individual messages securely. SSL and S-HTTP, therefore, can be seen as complementary rather than competing technologies. Both protocols were approved by the Internet Engineering Task Force (IETF) as a standard. (NOTE See SSL)
+
+###
+Acronym:     SNPP
+Title:           Simple Network Paging Protocol
+Port:           444
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+
+###
+Acronym:     Microsoft-DS
+Title:           Microsoft-DS
+Port:           445
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+
+###
+Acronym:     Apple Quicktime
+Title:           Apple Quicktime
+Port:           458
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+
+###
+Acronym:     DHCP Client
+Title:           -
+Port:           546
+Protocol:      -
+TCP/UDP:     -
+Definition:           	Dynamic Host Configuration Protocol (DHCP) is a client/server protocol that automatically provides an Internet Protocol (IP) host with its IP address and other related configuration information such as the subnet mask and default gateway. RFCs 2131 and 2132 define DHCP as an Internet Engineering Task Force (IETF) standard based on Bootstrap Protocol (BOOTP), a protocol with which DHCP shares many implementation details. DHCP allows hosts to obtain required TCP/IP configuration information from a DHCP server.
+	Windows Server 2008 includes the DHCP Server service, which is an optional networking component. All Windows-based clients include the DHCP client as part of TCP/IP, including Windows Vista, the Windows Server 2003 operating system, the Windows XP Professional operating system, Microsoft Windows2000 Professional operating system, Microsoft Windows NT Workstation4.0 operating system, Microsoft Windows Millennium Edition operating system, and the Microsoft Windows98 operating system.
+
+###
+Acronym:     DHCP Server
+Title:           DHCP Server
+Port:           547
+Protocol:      -
+TCP/UDP:     -
+Definition:           	Dynamic Host Configuration Protocol (DHCP) is a client/server protocol that automatically provides an Internet Protocol (IP) host with its IP address and other related configuration information such as the subnet mask and default gateway. RFCs 2131 and 2132 define DHCP as an Internet Engineering Task Force (IETF) standard based on Bootstrap Protocol (BOOTP), a protocol with which DHCP shares many implementation details. DHCP allows hosts to obtain required TCP/IP configuration information from a DHCP server.
+
+	Windows Server 2008 includes the DHCP Server service, which is an optional networking component. All Windows-based clients include the DHCP client as part of TCP/IP, including Windows Vista, the Windows Server2003 operating system, the Windows XP Professional operating system, Microsoft Windows2000 Professional operating system, Microsoft WindowsNT Workstation4.0 operating system, Microsoft Windows Millennium Edition operating system, and the Microsoft Windows98 operating system.
+
+###
+Acronym:     SNEWS
+Title:           SNEWS
+Port:           563
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+
+###
+Acronym:     Socks
+Title:           Socks
+Port:           1080
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+
+###
+Acronym:     MSN
+Title:           MSN
+Port:           569
+Protocol:      -
+TCP/UDP:     -
+Definition:           
+
+###
+Acronym:     IDS
+Title:           Intrusion Detection System
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:           A device or software that monitors the network for unauthorized access, malicious activity, or malware. Any incident that is registered is used to notify administrators and is often collected and stored centrally using the (SIEM) system. There is a wide spectrum of IDS including Network Intrusion Detection-NID and Host-Based Intrusion Detection-HIDS.
+	Most often, IDS detection is based on known signitures, or malicious network traffic patterns. Recognition is often reffered to the Intrusion Prevention System. IDS is similar to a firewall, but a firewall monitors external traffic and prevents it from getting in; while an IDS monitors often internal, suspected intruders after they have triggered an alarm.
+###
+Acronym:     -
+Title:           Identification Technologies
+Port:           -
+Protocol:      -
+TCP/UDP:     -
+Definition:           a. Signature Based Match _ does this code coming over the network match known malware. The photo below shows a known
+signature of a malware worm. Regardless of the situation, if this hexadecimal signature is detected anywhere, we know what it is and to prevent it.
+b. Anomaly Based Detection
+    i. We build a baseline on what we think is normal in all situations. Do we have bandwidth spikes? Do we have too many people trying to log on?
+c. Behavior Based
+    i. Does a specific individual log on and try to access something that they do not normally access?
+d. Heuristics
+    i. Use Artificial intelligence to identify.
+    ii. See a type of traffic flow come into the network, and see if it changes. Does this traffic contain good or bad packets? AI can keep learning.
+A signature match is black and white, while Heuristics is ever changing and adapting to new situations and new users
+
+
 ###
